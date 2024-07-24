@@ -1,0 +1,49 @@
+{
+    "DSA": {
+        "Advanced": {
+            "Divide and Conquer": 69,
+            "Union Find": 30,
+            "DP": 79, 
+            "Backtracking": 48,
+            "Trie": 21,
+            "Game Theory": 90
+        },
+        "Intermediate": {
+            "DFS": 70,
+            "Hash Table": 90,
+            "BFS": 60,
+            "Tree": 55,
+            "Math": 45,
+            "Greedy": 60
+        },
+        "Fundamental": {
+            "Array": 90,
+            "String": 85,
+            "Sorting": 70,
+            "Two Pointers": 77,
+            "Matrix": 92,
+            "Linked List": 95
+        }
+    },
+    "Frontend": {
+        "HTML": 80,
+        "JS": 75,
+        "Tailwind": 80,
+        "React": 70,
+        "CSS": 85
+    },
+    "Backend": {
+        "Node.js": 80,
+        "PHP": 70,
+        "Express": 75,
+        "MongoDB": 70,
+        "SQL": 75
+    },
+    "Artificial Intelligence": {
+        "Machine Learning": 70,
+        "NLP": 60,
+        "Deep Learning": 65,
+        "Computer Vision": 55,
+        "Model Deployment": 60
+    }
+}

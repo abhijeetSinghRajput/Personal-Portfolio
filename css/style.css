@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --bg-dark: #121212;
+    --white: #fafafa;
+    --old-white: #d6d6d6;
+
+    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
+    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
+    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+}
+
+body {
+    margin-top: 100px;
+    background-color: var(--bg-dark);
+    color: var(--white);
+}
+nav{
+    white-space: nowrap;
+    background-color: #121212e2;
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #383838;
+    display: flex;
+    justify-content: center;
+    
+}
+nav > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 860px;
+    padding: 20px;
+}
+nav ul{
+    display: flex;
+    gap: 16px;
+}
+nav .nav-item a{
+    color: var(--old-white);
+    padding: 8px 12px;
+    border-radius: 12px;
+}
+.nav-item a:hover{
+    color: var(--white);
+    background-color: #1e1e1f;
+}
+.body {
+    width: 100%;
+    max-width: 860px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.container{
+    padding: 30px;
+    margin: 0 16px;
+    margin-bottom: 30px;
+    border: 1px solid hsl(0, 0%, 22%);
+    background-color: #1e1e1f;
+    border-radius: 20px;
+    box-shadow: var(--shadow-1);
+}
+
+section#hero {
+    display: flex;
+    gap: 20px;
+}
+
+#hero .content {
+    flex: 1;
+    /* padding: 30px; */
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#hero .content #name {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    white-space: nowrap;
+}
+
+#hero .content h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+#hero .content p {
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+#hero .content .social-links {
+    display: flex;
+    margin-top: 32px;
+    margin-left: 4px;
+    gap: 20px;
+    width: max-content;
+}
+
+
+#hero .profile-photo {
+    flex: 1;
+    position: relative;
+    /* border: 1px solid white; */
+    height: 300px;
+    aspect-ratio: 1;
+}
+
+#hero .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+}
+
+#hero .profile-photo img.blob {
+    opacity: .8;
+}
+
+#hero .profile-photo img.avatar {
+    z-index: 2;
+    transform: scale(.7);
+}
+
+
+/* ==================================== */
+/* ================== about section  */
+/* ================================== */
+section>h2 {
+    padding: 20px 24px;
+    margin: 0px -24px 16px;
+}
+
+#about p {
+    margin-bottom: 16px;
+}
+
+
+/* ==================================== */
+/* ================== project section  */
+/* ================================== */
+section#projects .card-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    /* width: max-content; */
+    height: max-content;
+    padding: 30px;
+    border-radius: 14px;
+    font-size: 15px;
+    box-shadow: var(--shadow-2);
+    background: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+    position: relative;
+    z-index: 1;
+    color: #fafafa;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.card .wrapper {
+    display: flex;
+    gap: 18px;
+}
+
+.preview {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 120px;
+    aspect-ratio: 1/.65;
+}
+
+.preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s ease;
+}
+
+.card:hover .preview img{
+    transform: scale(1.1);
+}
+
+section.education {
+    background-color: red;
+}
+
+.lists li {
+    margin-bottom: 30px;
+    color: rgb(250, 250, 250);
+    position: relative;
+    padding-left: 30px;
+    font-size: 15px;
+}
+
+.lists li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 8px;
+    box-shadow: 0px 0px 0 4px #363636;
+    background-color: #feca66;
+    z-index: 1;
+}
+
+.lists li::after {
+    content: '';
+    background-color: #363636;
+    height: calc(100% + 30px);
+    top: 0;
+    left: 4px;
+    width: 1px;
+    position: absolute;
+    z-index: 0;
+}
+
+.lists li:last-child::after {
+    display: none;
+}
+
+/* ==================================== */
+/* ================== project section  */
+/* ================================== */
+.card .content h4{
+    text-transform: capitalize;
+    transition: .3s ease;
+}
+
+.card:hover h4{
+    color: #e4c466;
+}
+
+/* ==================================== */
+/* ================== skills section  */
+/* ================================== */
+.skill {
+    display: block;
+}
+
+.skill li {
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.skill h5 {
+    white-space: nowrap;
+    font-size: 15px;
+    color: #fafafa;
+    display: inline;
+    margin-right: 8px;
+}
+
+.skill data {
+    color: var(--old-white);
+    font-size: 15px;
+}
+
+.skill-progress {
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #383838;
+}
+
+.skill-progress .bar {
+    margin-top: 8px;
+    background: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+    height: 100%;
+    border-radius: inherit;
+    transition: .3s ease-in-out;
+}
+#skills h2{
+    margin: 16px;
+    margin-top: 46px;
+    padding: 0;
+}
+
+#skills .statistics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 6px;
+    max-width: 100%;
+}
+
+
+.statistics .chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+
+
+@media screen and (max-width: 680px) {
+    body{
+        margin-top: 60px;
+    }
+
+    .container{
+        padding: 15px;
+        margin: 12px;
+        margin-bottom: 20px;
+    }
+
+    nav > div{
+        padding: 0 16px;
+        height: 60px;
+        font-size: 15px;
+    }
+    nav .nav-item a{
+        padding: 0;
+    }
+    nav .nav-item a:hover{
+        background-color: transparent;
+    }
+    nav ul{
+        gap: 20px;
+    }
+
+    section#hero {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #hero .content #name {
+        font-size: 36px;
+    }
+    
+    #hero .content h2 {
+        font-size: 18px;
+    }
+    
+    #hero .content{
+        padding: 0;
+    }
+    #hero .profile-photo {
+        flex: 1;
+        /* border: 1px solid white; */
+        width: 200px;
+        aspect-ratio: 1;
+    }
+    
+    .skill li{
+        margin-bottom: 15px;
+    }
+    .skill h5{
+        font-weight: 500;
+        font-size: 13px;
+    }
+    .skill data{
+        font-size: 13px;
+    }
+    #skills .btn-wrapper{
+        margin-top: 10px;
+        gap: 8px;
+    }
+    #skills .btn-wrapper .btn{
+        padding: 2.5px 9px;
+        font-size: 14px;
+    }
+    #skills .statistics {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    .statistics .chart {
+        align-self: center;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .card .content h4{
+        font-size: 18px;
+    }
+    p {
+        font-size: 14px !important;
+    }
+
+    section#projects .card-wrapper {
+        gap: 20px;
+    }
+    .card{
+        padding: 0;
+    }
+    .preview{
+        border-radius: 16px;
+        height: auto;
+    }
+    .card .wrapper{
+        flex-direction: column;
+        gap: 0;
+    }
+    .card .content{
+        padding: 16px;
+    }
+}
