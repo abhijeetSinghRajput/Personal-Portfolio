@@ -27,8 +27,6 @@ p .a:hover {
     color: #fafafa;
     border: 2px solid #383839;
     text-align: center;
-    display: flex;
-    gap: 8px;
 }
 .btn.active,
 .btn:hover {
@@ -83,13 +81,17 @@ p .a:hover {
 .gold:focus::before {
     background: linear-gradient(135deg, hsla(45, 100%, 71%, 0.251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
 }
-
+sub,
+sup{
+    font-weight: 400;
+    font-size: 12px;
+    padding: 2px;
+}
 
 /* write is an animation class */
 .write {
     font-size: 24px;
-    color: #fafafa;
-    color: #ffda6f;
+    color: #ffdb70;
     font-weight: 600;
     text-transform: capitalize;
     text-align: center;
