@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>personal portfolio</title>
+    <link rel="shortcut icon" href="assets/icons/favicon.webp type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/utils.css">
 </head>
@@ -213,7 +214,7 @@
                     </div>
 
                     <div class="btn-wrapper">
-                        <div class="btn" onclick="updateChart('Frontend')">Frontend</div>
+                        <div class="btn active" onclick="updateChart('Frontend')">Frontend</div>
                         <div class="btn" onclick="updateChart('Backend')">Backend</div>
                         <div class="btn" onclick="updateChart('Artificial Intelligence')">AI</div>
                     </div>
@@ -221,7 +222,7 @@
                 </div>
 
                 <h2>DSA Skills</h2>
-                <div class="container">
+                <div class="container" id="dsa">
                     <div class="statistics">
                         <ul class="wrapper skill" id="dsa_skills"></ul>
                         <div class="chart">
@@ -230,9 +231,9 @@
                     </div>
 
                     <div class="btn-wrapper">
-                        <div class="btn" onclick="updateChart('Advanced', 'dsa')">Advanced</div>
+                        <div class="btn active" onclick="updateChart('Fundamental', 'dsa')">Fundamental</div>
                         <div class="btn" onclick="updateChart('Intermediate', 'dsa')">Intermediate</div>
-                        <div class="btn" onclick="updateChart('Fundamental', 'dsa')">Fundamental</div>
+                        <div class="btn" onclick="updateChart('Advanced', 'dsa')">Advanced</div>
                     </div>
 
                 </div>

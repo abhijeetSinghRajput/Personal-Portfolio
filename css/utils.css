@@ -27,6 +27,7 @@ p .a:hover {
     color: #fafafa;
     border: 2px solid #383839;
     text-align: center;
+    text-transform: capitalize;
 }
 .btn.active,
 .btn:hover {

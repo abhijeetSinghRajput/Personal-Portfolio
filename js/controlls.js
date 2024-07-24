@@ -1,5 +1,16 @@
-const projects = document.querySelector('#projects .card-wrapper');
+optionSlector(document.querySelectorAll('#skills #web .btn'));
+optionSlector(document.querySelectorAll('#skills #dsa .btn'));
 
+function optionSlector(options){
+    options.forEach(option=>{
+        option.addEventListener('click', ()=>{
+            options.forEach(e=>e.classList.remove('active'));
+            option.classList.add('active');
+        })
+    })
+}
+
+const projects = document.querySelector('#projects .card-wrapper');
 fetch('projects.json')
     .then((res) => {
         if (res.ok) return res.json();

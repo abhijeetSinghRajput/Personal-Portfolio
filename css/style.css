@@ -25,7 +25,8 @@ body {
     background-color: var(--bg-dark);
     color: var(--white);
 }
-nav{
+
+nav {
     white-space: nowrap;
     background-color: #121212e2;
     backdrop-filter: blur(8px);
@@ -36,9 +37,10 @@ nav{
     border-bottom: 1px solid #383838;
     display: flex;
     justify-content: center;
-    
+
 }
-nav > div{
+
+nav>div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,19 +48,23 @@ nav > div{
     max-width: 860px;
     padding: 20px;
 }
-nav ul{
+
+nav ul {
     display: flex;
     gap: 16px;
 }
-nav .nav-item a{
+
+nav .nav-item a {
     color: var(--old-white);
     padding: 8px 12px;
     border-radius: 12px;
 }
-.nav-item a:hover{
+
+.nav-item a:hover {
     color: #ffdb70;
     background-color: #1e1e1f;
 }
+
 .body {
     width: 100%;
     max-width: 860px;
@@ -66,7 +72,7 @@ nav .nav-item a{
     overflow: hidden;
 }
 
-.container{
+.container {
     padding: 30px;
     margin: 0 16px;
     margin-bottom: 30px;
@@ -158,7 +164,7 @@ section>h2 {
 /* ==================================== */
 /* ================== project section  */
 /* ================================== */
-section#projects .card-wrapper{
+section#projects .card-wrapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -170,7 +176,7 @@ section#projects .card-wrapper{
     padding: 30px;
     border-radius: 14px;
     font-size: 15px;
-    box-shadow: var(--shadow-2);
+    box-shadow: 0 16px 30px hsla(0, 0%, 0%, 0.25);
     background: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
     position: relative;
     z-index: 1;
@@ -197,7 +203,6 @@ section#projects .card-wrapper{
     border-radius: 14px;
     overflow: hidden;
     height: 120px;
-    border: 1px solid #383838;
     aspect-ratio: 1/.65;
     box-shadow: 0px 16px 24px rgba(0, 0, 0, .3);
 }
@@ -209,7 +214,7 @@ section#projects .card-wrapper{
     transition: .3s ease;
 }
 
-.card:hover .preview img{
+.card:hover .preview img {
     transform: scale(1.1);
 }
 
@@ -256,12 +261,12 @@ section.education {
 /* ==================================== */
 /* ================== project section  */
 /* ================================== */
-.card .content h4{
+.card .content h4 {
     text-transform: capitalize;
     transition: .3s ease;
 }
 
-.card:hover h4{
+.card:hover h4 {
     color: #e4c466;
 }
 
@@ -304,7 +309,8 @@ section.education {
     border-radius: inherit;
     transition: .3s ease-in-out;
 }
-#skills h2{
+
+#skills h2 {
     margin: 16px;
     margin-top: 46px;
     padding: 0;
@@ -329,28 +335,31 @@ section.education {
 
 
 @media screen and (max-width: 680px) {
-    body{
+    body {
         margin-top: 60px;
     }
 
-    .container{
+    .container {
         padding: 15px;
         margin: 12px;
         margin-bottom: 20px;
     }
 
-    nav > div{
+    nav>div {
         padding: 0 16px;
         height: 60px;
         font-size: 15px;
     }
-    nav .nav-item a{
+
+    nav .nav-item a {
         padding: 0;
     }
-    nav .nav-item a:hover{
+
+    nav .nav-item a:hover {
         background-color: transparent;
     }
-    nav ul{
+
+    nav ul {
         gap: 20px;
     }
 
@@ -358,42 +367,46 @@ section.education {
         display: flex;
         flex-direction: column-reverse;
     }
+
     #hero .content #name {
         font-size: 36px;
     }
-    
+
     #hero .content h2 {
         font-size: 18px;
     }
-    
-    #hero .content{
+
+    #hero .content {
         padding: 0;
     }
+
     #hero .profile-photo {
         flex: 1;
         /* border: 1px solid white; */
         width: 200px;
         aspect-ratio: 1;
     }
-    .card::before{
-        inset: 2px;
-    }
-    .skill li{
+
+
+    .skill li {
         margin-bottom: 15px;
     }
-    .skill h5{
+
+    .skill h5 {
         font-weight: 500;
         font-size: 13px;
     }
-    .skill data{
+
+    .skill data {
         font-size: 13px;
     }
-    
+
     #skills .statistics {
         display: flex;
         flex-direction: column-reverse;
         gap: 20px;
     }
+
     .statistics .chart {
         align-self: center;
         width: 250px;
@@ -403,11 +416,12 @@ section.education {
 
 
 @media screen and (max-width: 550px) {
-    .card .content h4{
+    .card .content h4 {
         color: #e4c466;
         font-size: 18px;
         margin-bottom: 8px;
     }
+
     p {
         font-size: 14px !important;
     }
@@ -415,31 +429,36 @@ section.education {
     section#projects .card-wrapper {
         gap: 30px;
     }
-    .card{
+
+    .card {
         padding: 0;
     }
-    .preview{
+    .preview {
         aspect-ratio: 1/.5;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
+        border-bottom: 1px solid #383838;
+        margin: 1px;
         height: auto;
-        margin: 2px;
     }
-    .card .wrapper{
+
+    .card .wrapper {
         flex-direction: column;
         gap: 0;
     }
-    .card .content{
+
+    .card .content {
         padding: 16px;
     }
 
-    #skills .btn-wrapper{
+    #skills .btn-wrapper {
         margin-top: 10px;
         gap: 8px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
-    #skills .btn-wrapper .btn{
+
+    #skills .btn-wrapper .btn {
         padding: 2.5px 9px;
         font-size: 14px;
         text-align: center;

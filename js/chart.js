@@ -15,7 +15,6 @@ const gradient = web_ctx.createLinearGradient(0, 0, 0, 400);
 gradient.addColorStop(0, 'rgba(255, 50, 0, 0.75)');
 gradient.addColorStop(1, 'rgba(254, 202, 102, 0.75)');
 
-
 //fetching data
 fetch('skills.json')
     .then((res) => {
