@@ -1,6 +1,26 @@
 {
     "projects": [
       {
+        "name": "Path Finder Visualizer",
+        "image": "assets/project preview/pathfinder-preview.png",
+        "description": "A web application that allows users to visualize various pathfinding algorithms",
+        "btns": [
+          {
+            "text": "code",
+            "href": "https://github.com/abhijeetSinghRajput/pathFinderVisualizer.git"
+          },
+          {
+            "text": "tutorial",
+            "href": "https://www.youtube.com/playlist?list=PLZ92O1inS6VmlSaCzdxm5_Jf2IyJesCF4"
+          },
+          {
+            "text": "demo",
+            "href": "https://path-explorer.netlify.app"
+          }
+        ]
+      },
+      
+      {
         "name": "My Portfolio",
         "image": "assets/project preview/portfolio-preview.png",
         "description": "My personal portfolio",
@@ -40,26 +60,6 @@
           {
             "text": "code",
             "href": "https://github.com/abhijeetSinghRajput/ChessEngine.git"
-          }
-        ]
-      },
-
-      {
-        "name": "Path Finder Visualizer",
-        "image": "assets/project preview/pathfinder-preview.png",
-        "description": "A web application that allows users to visualize various pathfinding algorithms",
-        "btns": [
-          {
-            "text": "code",
-            "href": "https://github.com/abhijeetSinghRajput/pathFinderVisualizer.git"
-          },
-          {
-            "text": "tutorial",
-            "href": "https://www.youtube.com/playlist?list=PLZ92O1inS6VmlSaCzdxm5_Jf2IyJesCF4"
-          },
-          {
-            "text": "demo",
-            "href": "https://path-explorer.netlify.app"
           }
         ]
       },
