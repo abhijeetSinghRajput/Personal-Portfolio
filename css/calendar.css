@@ -29,6 +29,16 @@
     grid-column: 2/3;
     display: grid;
 }
+#github .month.skeleton{
+    display: flex;
+    justify-content: space-between;
+}
+.month.skeleton li{
+    height: 12px;
+    width: 28px;
+    border-radius: 2px;
+    background-color: #1e1e1f;
+}
 
 #github .grid .week li{
     margin-top: 13px;

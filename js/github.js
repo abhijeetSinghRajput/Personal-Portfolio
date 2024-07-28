@@ -15,13 +15,40 @@ const query = `
     }
 `;
 
+const months_str = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+];
+const sufixs = [
+    "th", // 0th
+    "st", // 1st
+    "nd", // 2nd
+    "rd", // 3rd
+    "th", // 4th,
+    "th", // 5th,
+    "th", // 6th,
+    "th", // 7th,
+    "th", // 8th,
+    "th", // 9th,
+];
+
 
 
 const base_URL = 'https://api.github.com/graphql';
 const username = 'abhijeetSinghRajput';
 const token_stream = '01100111 01101000 01110000 01011111 01010001 01100011 01001001 00110110 01110111 01110000 01110100 01110111 01110111 00110010 01000010 01010100 01010100 01001101 01010001 01110110 01100111 01111010 00110010 01110110 01000111 01001001 01101110 01010100 01100011 01001110 01010010 00110111 01001011 00110010 00110011 01010101 01111001 01010111 01000101 01100001';
 
-const token = token_stream.split(' ').map(bin=>{
+const token = token_stream.split(' ').map(bin => {
     return String.fromCharCode(parseInt(bin, 2));
 }).join('');
 
@@ -54,10 +81,17 @@ fetch(base_URL, {
 
 
 const calendar = document.querySelector('#github .calendar');
+const monthWrapper = document.querySelector('#github .grid .month');
 const days = new Array(7);
 
 rendarSkeleton();
 function rendarSkeleton() {
+    for (let i = 0; i < 12; ++i) {
+        const li = document.createElement('li');
+        monthWrapper.append(li);
+    }
+    monthWrapper.classList.add('skeleton');
+
     for (let row = 0; row < 7; ++row) {
         days[row] = new Array(53);
         for (let col = 0; col < 53; ++col) {
@@ -69,33 +103,7 @@ function rendarSkeleton() {
     }
 }
 
-const months_str = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-];
-const sufixs = [
-    "th", // 0th
-    "st", // 1st
-    "nd", // 2nd
-    "rd", // 3rd
-    "th", // 4th,
-    "th", // 5th,
-    "th", // 6th,
-    "th", // 7th,
-    "th", // 8th,
-    "th", // 9th,
-];
-const days_str = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 
 function rendarCalendar(weeks) {
     const contributions = [];
@@ -123,7 +131,7 @@ function rendarCalendar(weeks) {
     let totalContribution = 0;
     for (let col = 0; col < 53; ++col) {
         for (let row = 0; row < 7; ++row) {
-            if(i >= contributions.length) break;
+            if (i >= contributions.length) break;
             const [date, contributionCount] = contributions[i++];
             const [y, m, d] = date.split('-').map(Number);
             let level = 0;
@@ -141,9 +149,10 @@ function rendarCalendar(weeks) {
     document.getElementById('contribution-count').textContent = totalContribution;
 }
 
-const monthWrapper = document.querySelector('#github .grid .month');
 function rendarMonths(fr, dateStart) {
     let m = new Date(dateStart).getMonth();
+    monthWrapper.innerHTML = '';
+    monthWrapper.classList.remove('skeleton');
 
     for (let i = 0; i < fr.length; ++i) {
         m %= 12;
