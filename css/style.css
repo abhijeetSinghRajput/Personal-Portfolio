@@ -9,7 +9,9 @@
     list-style: none;
     text-decoration: none;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 :root {
     --bg-dark: #121212;
     --white: #fafafa;
@@ -28,8 +30,7 @@ body {
 
 nav {
     white-space: nowrap;
-    background-color: #121212e2;
-    backdrop-filter: blur(8px);
+    background-color: var(--bg-dark);
     z-index: 100;
     position: fixed;
     top: 0;
@@ -60,9 +61,10 @@ nav .nav-item a {
     border-radius: 12px;
 }
 
+.nav-item a.active,
 .nav-item a:hover {
     color: #ffdb70;
-    background-color: #1e1e1f;
+    background-color: #252525;
 }
 
 .body {
@@ -355,6 +357,7 @@ section.education {
         padding: 0;
     }
 
+    nav .nav-item a.active,
     nav .nav-item a:hover {
         background-color: transparent;
     }
@@ -433,6 +436,7 @@ section.education {
     .card {
         padding: 0;
     }
+
     .preview {
         aspect-ratio: 1/.5;
         border-bottom-left-radius: 20px;

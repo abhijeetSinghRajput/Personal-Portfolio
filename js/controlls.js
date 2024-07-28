@@ -1,5 +1,43 @@
 optionSlector(document.querySelectorAll('#skills #web .btn'));
 optionSlector(document.querySelectorAll('#skills #dsa .btn'));
+const navLinks = document.querySelectorAll('.nav-item a');
+
+const sections = document.querySelectorAll('.body > section');
+const [heroSection, aboutSection, educationSection, projectsSection, skillsSection] = sections;
+const nav = document.querySelector('nav');
+
+navLinks.forEach(link=>{
+    link.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        const offsetTop = targetSection.offsetTop - nav.offsetHeight;
+
+        window.scrollTo({top: offsetTop});
+    })
+})
+
+// active link on scroll
+window.addEventListener('scroll', () => {
+    let currentSectionId = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - nav.offsetHeight;
+        const sectionBottom = sectionTop + section.clientHeight;
+
+        if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+            currentSectionId = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
 
 function optionSlector(options){
     options.forEach(option=>{

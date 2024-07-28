@@ -1,6 +1,13 @@
 #github.container {
-    background-color: transparent;
     color: #e6edf3;
+    background-color: transparent;
+}
+:root{
+    --lv-clr-0: #1e1e1f;
+    --lv-clr-1: hsl(150, 66%, 16%);
+    --lv-clr-2: hsl(148, 100%, 21%);
+    --lv-clr-3: hsl(133, 63%, 40%);
+    --lv-clr-4: hsl(130, 64%, 53%);
 }
 
 #github .grid {
@@ -68,26 +75,26 @@
 .day {
     border-radius: 2px;
     aspect-ratio: 1;
-    background-color: #1e1e1f;
+    background-color: var(--lv-clr-0);
 }
 
 
 .level-0 {
-    background-color: #1e1e1f
+    background-color: var(--lv-clr-0);
 }
 
 .level-1 {
-    background-color: #0e4429
+    background-color: var(--lv-clr-1);
 }
 
 .level-2 {
-    background-color: #006d32
+    background-color: var(--lv-clr-2);
 }
 
 .level-3 {
-    background-color: #26a641
+    background-color: var(--lv-clr-3);
 }
 
 .level-4 {
-    background-color: #39d353
+    background-color: var(--lv-clr-4);
 }
