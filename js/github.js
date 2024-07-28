@@ -106,7 +106,6 @@ function rendarCalendar(weeks) {
             contributions.push([date, contributionCount]);
         }
     }
-
     let count = 1;
     const fr = [];
     for (let i = 1; i < months.length; ++i) {
@@ -120,11 +119,11 @@ function rendarCalendar(weeks) {
     }
     fr.push(count);
     rendarMonths(fr, contributions[0][0]);
-
     let i = 0;
     let totalContribution = 0;
     for (let col = 0; col < 53; ++col) {
         for (let row = 0; row < 7; ++row) {
+            if(i >= contributions.length) break;
             const [date, contributionCount] = contributions[i++];
             const [y, m, d] = date.split('-').map(Number);
             let level = 0;
@@ -144,7 +143,6 @@ function rendarCalendar(weeks) {
 
 const monthWrapper = document.querySelector('#github .grid .month');
 function rendarMonths(fr, dateStart) {
-    console.log(fr);
     let m = new Date(dateStart).getMonth();
 
     for (let i = 0; i < fr.length; ++i) {
