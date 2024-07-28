@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>personal portfolio</title>
-    <link rel="shortcut icon" href="assets/icons/favicon.webp type="image/x-icon">
+    <link rel="shortcut icon" href="assets/icons/favicon.webp type=" image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/calendar.css">
 </head>
 
 <body>
@@ -89,7 +90,29 @@
             </div>
         </section>
 
+        <div id="github" class="container">
+            <p><span id="contribution-count">0</span> contributions in the last year</p>
+            <div class="grid">
+                <ul class="month">
 
+                </ul>
+                <ul class="week">
+                    <li>mon</li>
+                    <li>wed</li>
+                    <li>fri</li>
+                </ul>
+                <div class="calendar"></div>
+            </div>
+            <div class="levels">
+                less
+                <span class="day level-0"></span>
+                <span class="day level-1"></span>
+                <span class="day level-2"></span>
+                <span class="day level-3"></span>
+                <span class="day level-4"></span>
+                More
+            </div>
+        </div>
         <!-- ================================================= -->
         <!-- ===================== ABOUT ===================== -->
         <!-- ================================================= -->
@@ -204,5 +227,6 @@
 <script src="js/effects.js"></script>
 <script src="js/chart.js"></script>
 <script src="js/controlls.js"></script>
+<script src="js/github.js"></script>
 
 </html>
