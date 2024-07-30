@@ -65,6 +65,22 @@
       },
 
       {
+        "name": "TypingGuru",
+        "image": "assets/project preview/typingGuru-preview.png",
+        "description": "Master the keyboard with speed and accuracy.",
+        "btns": [
+          {
+            "text": "code",
+            "href": "https://github.com/abhijeetSinghRajput/TypingGuru"
+          },
+          {
+            "text": "demo",
+            "href": "https://fingersfast.netlify.app/"
+          }
+        ]
+      },
+
+      {
         "name": "Num Pie",
         "image": "assets/project preview/numpie-preview.png",
         "description": "A scientific equation solver",

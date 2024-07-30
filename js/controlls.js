@@ -11,7 +11,7 @@ navLinks.forEach(link=>{
         e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
-        const offsetTop = targetSection.offsetTop - nav.offsetHeight;
+        const offsetTop = targetSection.offsetTop - nav.clientHeight;
 
         window.scrollTo({top: offsetTop});
     })
@@ -22,7 +22,7 @@ window.addEventListener('scroll', () => {
     let currentSectionId = '';
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - nav.offsetHeight;
+        const sectionTop = section.offsetTop - nav.clientHeight;
         const sectionBottom = sectionTop + section.clientHeight;
 
         if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
