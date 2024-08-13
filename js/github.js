@@ -84,7 +84,10 @@ const calendar = document.querySelector('#github .calendar');
 const monthWrapper = document.querySelector('#github .grid .month');
 const days = new Array(7);
 
+const SKELETON_ROWS = 7;
+const SKELETON_COLS = 53;
 rendarSkeleton();
+
 function rendarSkeleton() {
     for (let i = 0; i < 12; ++i) {
         const li = document.createElement('li');
@@ -92,9 +95,9 @@ function rendarSkeleton() {
     }
     monthWrapper.classList.add('skeleton');
 
-    for (let row = 0; row < 7; ++row) {
-        days[row] = new Array(53);
-        for (let col = 0; col < 53; ++col) {
+    for (let row = 0; row < SKELETON_ROWS; ++row) {
+        days[row] = new Array(SKELETON_COLS);
+        for (let col = 0; col < SKELETON_COLS; ++col) {
             const day = document.createElement('div');
             day.className = 'day';
             calendar.appendChild(day);
@@ -131,7 +134,10 @@ function rendarCalendar(weeks) {
     let totalContribution = 0;
     for (let col = 0; col < 53; ++col) {
         for (let row = 0; row < 7; ++row) {
-            if (i >= contributions.length) break;
+            if (i >= contributions.length) {
+                clearExtraSkeletonDays(i);
+                break;
+            }
             const [date, contributionCount] = contributions[i++];
             const [y, m, d] = date.split('-').map(Number);
             let level = 0;
@@ -165,4 +171,15 @@ function rendarMonths(fr, dateStart) {
     let columns = fr.join('fr ');
     monthWrapper.style.gridTemplateColumns = columns + 'fr';
 
+}
+
+
+function clearExtraSkeletonDays(offset) {
+    let length = SKELETON_ROWS * SKELETON_COLS;
+    while (offset < length) {
+        let row = offset % 7;
+        let col = Math.floor(offset / 7);
+        console.log(days[row][col].style.visibility = 'hidden');
+        offset++;
+    }
 }
