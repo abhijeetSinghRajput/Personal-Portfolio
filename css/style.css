@@ -468,3 +468,10 @@ section.education {
         text-align: center;
     }
 }
+
+/* Apply styles only to touch screens */
+@media (pointer: coarse) {
+  html {
+    touch-action: pan-x pan-y; /* Prevent zooming, but allow panning */
+  }
+}
