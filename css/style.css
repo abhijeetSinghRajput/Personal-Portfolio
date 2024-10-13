@@ -223,6 +223,7 @@ section#projects .card-wrapper {
 
 section#expertise .lists li{
     margin-bottom: 16px;
+    font-size: 14px;
 }
 section#expertise .lists::after {
     height: calc(100% + 16px);
