@@ -11,6 +11,10 @@ p .a:hover {
     color: #ffeea6;
     text-decoration: underline;
 }
+p span,
+li span{
+    color: #ffeea6;
+}
 
 .btn-wrapper {
     display: flex;

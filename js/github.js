@@ -82,7 +82,10 @@ fetch(base_URL, {
 
 const calendar = document.querySelector('#github .calendar');
 const monthWrapper = document.querySelector('#github .grid .month');
+const grid = document.querySelector('#github .grid');
+grid.scrollLeft = grid.scrollWidth;
 const days = new Array(7);
+
 
 const SKELETON_ROWS = 7;
 const SKELETON_COLS = 53;
@@ -179,7 +182,7 @@ function clearExtraSkeletonDays(offset) {
     while (offset < length) {
         let row = offset % 7;
         let col = Math.floor(offset / 7);
-        console.log(days[row][col].style.visibility = 'hidden');
+        days[row][col].style.visibility = 'hidden';
         offset++;
     }
 }
