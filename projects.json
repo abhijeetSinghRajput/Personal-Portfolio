@@ -1,6 +1,34 @@
 {
   "projects": [
     {
+      "name": "Chess Engine",
+      "image": "assets/project preview/chess-preview1.png",
+      "description": "A powerful chess engine possess the ability to win against advance chess players.",
+      "btns": [
+        {
+          "text": "code",
+          "href": "https://github.com/abhijeetSinghRajput/ChessEngine.git"
+        },
+        {
+          "text": "demo",
+          "href": "https://chessleague.netlify.app"
+        }
+      ]
+    },
+
+    {
+      "name": "Chess Engine Version<sub>2.1</sub>",
+      "image": "assets/project preview/doodle.png",
+      "description": "Advanced version of chess engine, crafted in C++",
+      "btns": [
+        {
+          "text": "code",
+          "href": "https://github.com/abhijeetSinghRajput/ChessEngine.git"
+        }
+      ]
+    },
+
+    {
       "name": "Path Finder Visualizer",
       "image": "assets/project preview/pathfinder-preview.png",
       "description": "A web application that allows users to visualize various pathfinding algorithms",
@@ -19,47 +47,23 @@
         }
       ]
     },
+
     {
-      "name": "TypingGuru",
-      "image": "assets/project preview/typingGuru-preview.png",
-      "description": "Master the keyboard with speed and accuracy.",
+      "name": "Sorting Simulator",
+      "image": "assets/project preview/sorting-preview.png",
+      "description": "Real time sorting algorithm visualizer",
       "btns": [
         {
           "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/TypingGuru"
+          "href": "https://github.com/abhijeetSinghRajput/sorting-simulation.git"
         },
         {
           "text": "demo",
-          "href": "https://fingersfast.netlify.app/"
+          "href": "https://sortsimulator.netlify.app"
         }
       ]
     },
-    {
-      "name": "Chess Engine",
-      "image": "assets/project preview/chess-preview1.png",
-      "description": "A powerful chess engine possess the ability to win against advance chess players.",
-      "btns": [
-        {
-          "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/ChessEngine.git"
-        },
-        {
-          "text": "demo",
-          "href": "https://chessleague.netlify.app"
-        }
-      ]
-    },
-    {
-      "name": "Chess Engine Version<sub>2.1</sub>",
-      "image": "assets/project preview/doodle.png",
-      "description": "Advanced version of chess engine, crafted in C++",
-      "btns": [
-        {
-          "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/ChessEngine.git"
-        }
-      ]
-    },
+
     {
       "name": "My Portfolio",
       "image": "assets/project preview/portfolio-preview.png",
@@ -75,6 +79,7 @@
         }
       ]
     },
+
     {
       "name": "Num Pie",
       "image": "assets/project preview/numpie-preview.png",
@@ -90,18 +95,19 @@
         }
       ]
     },
+
     {
-      "name": "Sorting Simulator",
-      "image": "assets/project preview/sorting-preview.png",
-      "description": "Real time sorting algorithm visualizer",
+      "name": "TypingGuru",
+      "image": "assets/project preview/typingGuru-preview.png",
+      "description": "Master the keyboard with speed and accuracy.",
       "btns": [
         {
           "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/sorting-simulation.git"
+          "href": "https://github.com/abhijeetSinghRajput/TypingGuru"
         },
         {
           "text": "demo",
-          "href": "https://sortsimulator.netlify.app"
+          "href": "https://fingersfast.netlify.app/"
         }
       ]
     },
