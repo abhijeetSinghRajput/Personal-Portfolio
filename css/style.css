@@ -221,14 +221,6 @@ section#projects .card-wrapper {
 }
 
 
-section#expertise .lists li{
-    margin-bottom: 16px;
-    font-size: 14px;
-}
-section#expertise .lists::after {
-    height: calc(100% + 16px);
-}
-
 .lists li {
     margin-bottom: 30px;
     color: rgb(250, 250, 250);
@@ -263,6 +255,14 @@ section#expertise .lists::after {
 
 .lists li:last-child::after {
     display: none;
+}
+
+section#expertise .lists li{
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+section#expertise .lists li::after {
+    height: calc(100% + 16px);
 }
 
 /* ==================================== */
