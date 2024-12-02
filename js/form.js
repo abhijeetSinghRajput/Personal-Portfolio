@@ -50,4 +50,6 @@ fullNameInput.onfocus = validateForm;
 fullNameInput.oninput = validateForm;
 emailInput.oninput = validateForm;
 messageInput.oninput = validateForm;
-
+messageBtn.onclick = () => {
+    form.submit();
+};
