@@ -1,6 +1,4 @@
-const nameRegex = /^[a-zA-Z\s'-]+$/;
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
+emailjs.init('hQCOhIKpU79nR8u3x'); 
 
 const form = document.querySelector('#contactForm');
 const fullNameInput = document.getElementById('full-name');
@@ -19,7 +17,7 @@ function validateForm(){
         fullNameInput.classList.remove('valid');
         isValid = false;
     }
-    
+
     // email validation
     if (emailRegex.test(emailInput.value)) {
         emailInput.classList.add('valid');
@@ -29,7 +27,7 @@ function validateForm(){
         emailInput.classList.remove('valid');
         isValid = false;
     }
-    
+
     // message validation
     if (messageInput.value.length) {
         messageInput.classList.add('valid');
@@ -41,18 +39,25 @@ function validateForm(){
     }
 
     messageBtn.disabled = !isValid;
+    return isValid;
 }
 
-validateForm();
-
-fullNameInput.onfocus = validateForm;
-
-fullNameInput.oninput = validateForm;
-emailInput.oninput = validateForm;
-messageInput.oninput = validateForm;
 messageBtn.onclick = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     if (validateForm()) {
-        form.submit();
+        const name = fullNameInput.value;
+        const email = emailInput.value;
+        const message = messageInput.value;
+
+        emailjs.send('service_v4ojphv', 'template_qt486pa', {
+            name: name,
+            email: email,
+            message: message,
+        })
+        .then(() => {
+            alert('Message sent successfully!');
+            form.reset();  // Reset form after successful send
+        })
+        .catch(() => alert('Failed to send the message.'));
     }
 };
