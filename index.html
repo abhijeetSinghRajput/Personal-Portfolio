@@ -29,7 +29,7 @@
                 </li>
             </ul>
 
-            <a href="#" class="gold">Hire Me</a>
+            <a href="#contact" class="gold">Contact</a>
         </div>
     </nav>
     <div class="body">
@@ -236,7 +236,20 @@
                 </div>
             </div>
         </section>
-
+        <section id="contact" class="container">
+            <h2>Contact</h2>
+            <form id="contact-form" action="https://formsubmit.co/abhijeet62008@gmail.com" method="POST">
+                <input type="text" name="name" id="fullname" placeholder="Full name" required>
+                <input type="email" name="email" id="email" placeholder="Email address"  required>
+                <textarea name="message" id="message" placeholder="Your Message"></textarea>
+           </form>
+           <button id="message-btn" class="gold">
+            <div class="icon">
+                <img src="./assets/icons/paper-plane.svg" alt="">
+            </div>
+            Send Message
+        </button>
+        </section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -246,5 +259,6 @@
 <script src="js/chart.js"></script>
 <script src="js/controlls.js"></script>
 <script src="js/github.js"></script>
+<script src="js/form.js"></script>
 
 </html>

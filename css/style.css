@@ -8,6 +8,7 @@
     font-family: 'Poppins', sans-serif;
     list-style: none;
     text-decoration: none;
+    background: none;
 }
 html{
     scroll-behavior: smooth;
@@ -161,6 +162,7 @@ section>h2 {
 #about p {
     margin-bottom: 16px;
 }
+
 
 
 /* ==================================== */
@@ -339,13 +341,63 @@ section#expertise .lists li::after {
 }
 
 
+/* ==================================== */
+/* ================== contact section  */
+/* ================================== */
+#contact-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    margin-bottom: 20px;
+}
+.valid:focus{
+    border-color: #bca358;
+}
+.invalid:focus{
+    border-color: #b84c4c;
+}
+input, textarea {
+    padding: 15px 20px;
+    color: #fafafa;
+    font-weight: 400;
+    font-size: 15px;
+    border: 1px solid #383838;
+    border-radius: 14px;
+    outline: none;
+    width: 100%;
+}
+textarea{
+    resize: none;
+    height: 120px;
+    grid-column: 1/-1;
+}
+#message-btn{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 16px 20px;
+}
+button:disabled{
+    filter: grayscale(100%);
+    cursor: not-allowed !important;
+}
+input::placeholder{
+    color: #757575;
+}
 
 
 @media screen and (max-width: 680px) {
     body {
         margin-top: 60px;
     }
-
+    #contact-form{
+        grid-template-columns: 1fr;
+    }
     .container {
         padding: 15px;
         margin: 8px;
@@ -428,6 +480,11 @@ section#expertise .lists li::after {
         color: #e4c466;
         font-size: 18px;
         margin-bottom: 8px;
+    }
+
+    #message-btn{
+        width: 100%;
+        justify-content: center;
     }
 
     p {
