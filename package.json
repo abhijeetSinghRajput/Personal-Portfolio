@@ -1,0 +1,12 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'No build step'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
