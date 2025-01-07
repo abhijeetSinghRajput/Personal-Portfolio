@@ -43,6 +43,7 @@ function validateForm() {
     }
 
     messageBtn.disabled = !isValid;
+    return isValid;
 }
 
 validateForm();
@@ -51,6 +52,37 @@ emailInput.oninput = validateForm;
 fullNameInput.oninput = validateForm;
 messageInput.oninput = validateForm;
 
-messageBtn.onclick = () => {
-    form.submit();
+messageBtn.onclick = async () => {
+    if(!validateForm()) return;
+    
+    const data = {
+        name: fullNameInput.value,
+        email: emailInput.value,
+        message: messageInput.value,
+    };
+    
+    fullNameInput.value = "";
+    emailInput.value = "";
+    messageInput.value = "";
+
+    console.log(data);
+    
+    try {
+        const response = await fetch('/.netlify/functions/send-mail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            alert("Email sent successfully");
+        } else {
+            alert("Failed to send email");
+        }
+    } catch (error) {
+        console.error('Error: ', error);
+        alert("Failed to send email");
+    }
 };
