@@ -4,6 +4,9 @@ const emailInput = document.getElementById("email");
 const messageInput = document.getElementById("message");
 const messageBtn = document.getElementById("message-btn");
 
+const loader = document.querySelector('.loader');
+const alertBox = document.querySelector('.alert');
+
 const nameRegex = /^[a-zA-Z\s'-\.]+$/;
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const messageRegex = /\S+/;
@@ -53,20 +56,19 @@ fullNameInput.oninput = validateForm;
 messageInput.oninput = validateForm;
 
 messageBtn.onclick = async () => {
-    if(!validateForm()) return;
-    
     const data = {
         name: fullNameInput.value,
         email: emailInput.value,
         message: messageInput.value,
     };
+    loader.classList.add('show');
+
     
     fullNameInput.value = "";
     emailInput.value = "";
     messageInput.value = "";
+    messageBtn.disabled = true;
 
-    console.log(data);
-    
     try {
         const response = await fetch('/.netlify/functions/send-mail', {
             method: 'POST',
@@ -79,10 +81,21 @@ messageBtn.onclick = async () => {
         if (response.ok) {
             alert("Email sent successfully");
         } else {
-            alert("Failed to send email");
+            alert("Failed to send email", "danger");
         }
     } catch (error) {
         console.error('Error: ', error);
-        alert("Failed to send email");
+        alert("Failed to send email", "danger");
+    } finally {
+        loader.classList.remove('show');
     }
 };
+
+function alert(message, type = "success") {
+    alertBox.textContent = message;
+    alertBox.className = `${type} alert show`;
+
+    setTimeout(() => {
+        alertBox.classList.remove('show');
+    }, 4000);
+}
