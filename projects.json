@@ -7,15 +7,16 @@
       "btns": [
         {
           "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/ChessEngine.git"
+          "href": "https://github.com/abhijeetSinghRajput/ChessEngine.git",
+          "title": "View Code on GitHub"
         },
         {
           "text": "demo",
-          "href": "https://chessleague.netlify.app"
+          "href": "https://chessleague.netlify.app",
+          "title": "View Demo"
         }
       ]
     },
-
     {
       "name": "Chess Engine Version<sub>2.1</sub>",
       "image": "assets/project preview/doodle.png",
@@ -23,11 +24,11 @@
       "btns": [
         {
           "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/ChessEngine.git"
+          "href": "https://github.com/abhijeetSinghRajput/ChessEngine.git",
+          "title": "View Code on GitHub"
         }
       ]
     },
-
     {
       "name": "Path Finder Visualizer",
       "image": "assets/project preview/pathfinder-preview.png",
@@ -35,19 +36,21 @@
       "btns": [
         {
           "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/pathFinderVisualizer.git"
+          "href": "https://github.com/abhijeetSinghRajput/pathFinderVisualizer.git",
+          "title": "View Code on GitHub"
         },
         {
           "text": "tutorial",
-          "href": "https://www.youtube.com/playlist?list=PLZ92O1inS6VmlSaCzdxm5_Jf2IyJesCF4"
+          "href": "https://www.youtube.com/playlist?list=PLZ92O1inS6VmlSaCzdxm5_Jf2IyJesCF4",
+          "title": "Watch Tutorial"
         },
         {
           "text": "demo",
-          "href": "https://path-explorer.netlify.app"
+          "href": "https://path-explorer.netlify.app",
+          "title": "View Demo"
         }
       ]
     },
-
     {
       "name": "Sorting Simulator",
       "image": "assets/project preview/sorting-preview.png",
@@ -55,15 +58,16 @@
       "btns": [
         {
           "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/sorting-simulation.git"
+          "href": "https://github.com/abhijeetSinghRajput/sorting-simulation.git",
+          "title": "View Code on GitHub"
         },
         {
           "text": "demo",
-          "href": "https://sortsimulator.netlify.app"
+          "href": "https://sortsimulator.netlify.app",
+          "title": "View Demo"
         }
       ]
     },
-
     {
       "name": "My Portfolio",
       "image": "assets/project preview/portfolio-preview.png",
@@ -71,15 +75,16 @@
       "btns": [
         {
           "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/Personal-Portfolio.git"
+          "href": "https://github.com/abhijeetSinghRajput/Personal-Portfolio.git",
+          "title": "View Code on GitHub"
         },
         {
           "text": "demo",
-          "href": "https://chessleague.netlify.app"
+          "href": "https://chessleague.netlify.app",
+          "title": "View Demo"
         }
       ]
     },
-
     {
       "name": "Num Pie",
       "image": "assets/project preview/numpie-preview.png",
@@ -87,15 +92,16 @@
       "btns": [
         {
           "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/Num-Pie.git"
+          "href": "https://github.com/abhijeetSinghRajput/Num-Pie.git",
+          "title": "View Code on GitHub"
         },
         {
           "text": "demo",
-          "href": "https://numpie.netlify.app/"
+          "href": "https://numpie.netlify.app/",
+          "title": "View Demo"
         }
       ]
     },
-
     {
       "name": "TypingGuru",
       "image": "assets/project preview/typingGuru-preview.png",
@@ -103,11 +109,13 @@
       "btns": [
         {
           "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/TypingGuru"
+          "href": "https://github.com/abhijeetSinghRajput/TypingGuru",
+          "title": "View Code on GitHub"
         },
         {
           "text": "demo",
-          "href": "https://fingersfast.netlify.app/"
+          "href": "https://fingersfast.netlify.app/",
+          "title": "View Demo"
         }
       ]
     },
@@ -118,11 +126,13 @@
       "btns": [
         {
           "text": "code",
-          "href": "https://github.com/abhijeetSinghRajput/snake-game.git"
+          "href": "https://github.com/abhijeetSinghRajput/snake-game.git",
+          "title": "View Code on GitHub"
         },
         {
           "text": "demo",
-          "href": "https://2dsnake.netlify.app"
+          "href": "https://2dsnake.netlify.app",
+          "title": "View Demo"
         }
       ]
     }

@@ -62,8 +62,8 @@ fetch('projects.json')
 
 function renderProjects(parent, data) {
     const btnFragments = (btns) => {
-        return btns.map(({ href, text }) => {
-            return `<a target="_blank" href="${href}" class="btn">${text}</a>`;
+        return btns.map(({ href, text, title }) => {
+            return `<a target="_blank" title="${title}" href="${href}" class="btn">${text}</a>`;
         });
     };
 
@@ -72,7 +72,7 @@ function renderProjects(parent, data) {
             <div class="card">
                 <div class="wrapper">
                     <div class="preview">
-                        <img src="${e.image}" alt="no preview">
+                        <img src="${e.image}" alt="Project Thumbnail" loading="lazy">
                     </div>
                     <div class="content">
                         <h4>${e.name}</h4>
