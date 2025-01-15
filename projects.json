@@ -68,6 +68,23 @@
         }
       ]
     },
+        {
+      "name": "Whisper",
+      "image": "assets/project preview/Whisper.png",
+      "description": "End to End  realtime chating app (MERN).",
+      "btns": [
+        {
+          "text": "code",
+          "href": "https://github.com/abhijeetSinghRajput/whisper",
+          "title": "View Code on GitHub"
+        },
+        {
+          "text": "demo",
+          "href": "https://whisper-chat-app-m4ks.onrender.com",
+          "title": "View Demo"
+        }
+      ]
+    },
     {
       "name": "My Portfolio",
       "image": "assets/project preview/portfolio-preview.png",
