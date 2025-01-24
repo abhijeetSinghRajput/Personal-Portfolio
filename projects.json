@@ -70,7 +70,7 @@
     },
         {
       "name": "Whisper",
-      "image": "assets/project preview/Whisper.png",
+      "image": "assets/project preview/whisper-preview.png",
       "description": "End to End  realtime chating app (MERN).",
       "btns": [
         {
