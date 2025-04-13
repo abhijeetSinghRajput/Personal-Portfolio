@@ -371,6 +371,12 @@ textarea{
     height: 120px;
     grid-column: 1/-1;
 }
+.circle-gradient{
+    background: linear-gradient(135deg, #d1a854, #d13c0a);
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
 #message-btn{
     display: flex;
     align-items: center;
