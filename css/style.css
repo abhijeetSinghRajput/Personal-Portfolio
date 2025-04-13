@@ -391,6 +391,11 @@ input::placeholder{
 }
 
 
+@media screen and (max-width: 770px) {
+    #hero .content #name {
+        font-size: 40px;
+    }
+}
 @media screen and (max-width: 680px) {
     body {
         margin-top: 60px;

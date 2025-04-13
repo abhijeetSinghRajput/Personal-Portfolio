@@ -25,6 +25,8 @@ const sufixs = [
   "th", // 9th,
 ];
 
+let result;
+
 async function loadGitHubActivity() {
   try {
     const response = await fetch("/.netlify/functions/github-activity");
@@ -33,7 +35,7 @@ async function loadGitHubActivity() {
       throw new Error(errorText || "Network response was not ok");
     }
 
-    const result = await response.json();
+    result = await response.json();
     const weeks =
       result.data.user.contributionsCollection.contributionCalendar.weeks;
     rendarCalendar(weeks);
