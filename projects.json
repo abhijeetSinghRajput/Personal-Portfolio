@@ -1,6 +1,23 @@
 {
   "projects": [
     {
+      "name": "Notehub",
+      "image": "assets/project preview/notehub-preview.png",
+      "description": "NoteHub - a sleek, collaborative platform for capturing, structuring, and sharing notes that matter.",
+      "btns": [
+        {
+          "text": "code",
+          "href": "https://github.com/abhijeetSinghRajput/notehub-production.git",
+          "title": "View Code on GitHub"
+        },
+        {
+          "text": "demo",
+          "href": "https://notehub-production.onrender.com",
+          "title": "View Demo"
+        }
+      ]
+    },
+    {
       "name": "Chess Engine",
       "image": "assets/project preview/chess-preview1.png",
       "description": "A powerful chess engine possess the ability to win against advance chess players.",

@@ -520,8 +520,8 @@ input::placeholder{
 
     .preview {
         aspect-ratio: 1/.5;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
         border-bottom: 1px solid #383838;
         margin: 1px;
         height: auto;
