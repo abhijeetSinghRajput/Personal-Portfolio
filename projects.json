@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "Notehub",
-      "image": "assets/project preview/notehub-preview.png",
+      "image": "assets/project-preview/notehub-preview.png",
       "description": "NoteHub - a sleek, collaborative platform for capturing, structuring, and sharing notes that matter.",
       "btns": [
         {
@@ -19,7 +19,7 @@
     },
     {
       "name": "Chess Engine",
-      "image": "assets/project preview/chess-preview1.png",
+      "image": "assets/project-preview/chess-preview1.png",
       "description": "A powerful chess engine possess the ability to win against advance chess players.",
       "btns": [
         {
@@ -36,7 +36,7 @@
     },
     {
       "name": "Chess Engine Version<sub>2.1</sub>",
-      "image": "assets/project preview/doodle.png",
+      "image": "assets/project-preview/doodle.png",
       "description": "Advanced version of chess engine, crafted in C++",
       "btns": [
         {
@@ -48,7 +48,7 @@
     },
     {
       "name": "Path Finder Visualizer",
-      "image": "assets/project preview/pathfinder-preview.png",
+      "image": "assets/project-preview/pathfinder-preview.png",
       "description": "A web application that allows users to visualize various pathfinding algorithms",
       "btns": [
         {
@@ -70,7 +70,7 @@
     },
     {
       "name": "Sorting Simulator",
-      "image": "assets/project preview/sorting-preview.png",
+      "image": "assets/project-preview/sorting-preview.png",
       "description": "Real time sorting algorithm visualizer",
       "btns": [
         {
@@ -87,7 +87,7 @@
     },
         {
       "name": "Whisper",
-      "image": "assets/project preview/whisper-preview.png",
+      "image": "assets/project-preview/whisper-preview.png",
       "description": "End to End  realtime chating app (MERN).",
       "btns": [
         {
@@ -104,7 +104,7 @@
     },
     {
       "name": "My Portfolio",
-      "image": "assets/project preview/portfolio-preview.png",
+      "image": "assets/project-preview/portfolio-preview.png",
       "description": "My personal portfolio",
       "btns": [
         {
@@ -121,7 +121,7 @@
     },
     {
       "name": "Num Pie",
-      "image": "assets/project preview/numpie-preview.png",
+      "image": "assets/project-preview/numpie-preview.png",
       "description": "A scientific equation solver",
       "btns": [
         {
@@ -138,7 +138,7 @@
     },
     {
       "name": "TypingGuru",
-      "image": "assets/project preview/typingGuru-preview.png",
+      "image": "assets/project-preview/typingGuru-preview.png",
       "description": "Master the keyboard with speed and accuracy.",
       "btns": [
         {
@@ -155,7 +155,7 @@
     },
     {
       "name": "Snake Game",
-      "image": "assets/project preview/snake-preview.png",
+      "image": "assets/project-preview/snake-preview.png",
       "description": "Crafted for fun: a nostalgic twist on the classic Snake Game.",
       "btns": [
         {
