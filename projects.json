@@ -1,6 +1,23 @@
 {
   "projects": [
     {
+      "name": "My Collage Mod apk",
+      "description": "Redesigned GEU Legacy Portal – everything at your fingertips, now 40% faster!",
+      "image": "assets/project-preview/geu-preview.png",
+      "btns": [
+        {
+          "text": "code",
+          "href": "https://github.com/abhijeetsinghrajput/geu-erp.git",
+          "title": "View Code on GitHub"
+        },
+        {
+          "text": "demo",
+          "href": "https://geu-student.onrender.com/login",
+          "title": "View Demo"
+        }
+      ]
+    },
+    {
       "name": "Notehub",
       "image": "assets/project-preview/notehub-preview.png",
       "description": "NoteHub - a sleek, collaborative platform for capturing, structuring, and sharing notes that matter.",
