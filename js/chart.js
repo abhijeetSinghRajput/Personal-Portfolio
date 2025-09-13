@@ -29,7 +29,7 @@ fetch('skills.json')
         web_chart = renderChart(web_ctx, data.Frontend, 'Frontend');
     })
     .catch(e => {
-        console.error(e);
+        // console.error(e);
     });
 
 

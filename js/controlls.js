@@ -57,7 +57,7 @@ fetch('projects.json')
         renderProjects(projects, data.projects);
     })
     .catch(e => {
-        console.error(e);
+        // console.error(e);
     });
 
 function renderProjects(parent, data) {

@@ -40,7 +40,7 @@ async function loadGitHubActivity() {
       result.data.user.contributionsCollection.contributionCalendar.weeks;
     rendarCalendar(weeks);
   } catch (err) {
-    console.error("Fetch error:", err);
+    // console.error("Fetch error:", err);
   }
 }
 

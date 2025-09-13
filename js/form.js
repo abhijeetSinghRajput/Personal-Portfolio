@@ -84,7 +84,7 @@ messageBtn.onclick = async () => {
             alert("Failed to send email", "danger");
         }
     } catch (error) {
-        console.error('Error: ', error);
+        // console.error('Error: ', error);
         alert("Failed to send email", "danger");
     } finally {
         loader.classList.remove('show');
