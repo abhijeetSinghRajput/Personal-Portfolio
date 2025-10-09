@@ -147,7 +147,7 @@ section#hero {
 
 #hero .profile-photo img.avatar {
     z-index: 2;
-    transform: scale(.7);
+    transform: scale(1);
 }
 
 
