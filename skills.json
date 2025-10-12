@@ -26,24 +26,24 @@
         }
     },
     "Frontend": {
-        "HTML": 80,
-        "JS": 75,
+        "React.js": 80,
+        "Next.js": 75,
         "Tailwind": 80,
-        "React": 70,
-        "CSS": 85
+        "ShadCN/UI": 70,
+        "Zustand": 85
     },
     "Backend": {
         "Node.js": 80,
-        "PHP": 70,
+        "NEXT": 70,
         "Express": 75,
         "MongoDB": 70,
         "SQL": 75
     },
-    "Artificial Intelligence": {
-        "Machine Learning": 70,
-        "NLP": 60,
-        "Deep Learning": 65,
-        "Computer Vision": 55,
-        "Model Deployment": 60
+    "Tools": {
+        "Git": 80,
+        "GitHub": 90,
+        "WebSockets": 70,
+        "Postman": 92,
+        "Firebase": 78
     }
 }

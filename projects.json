@@ -12,6 +12,7 @@
         },
         {
           "text": "demo",
+          "className": "demo",
           "href": "https://geu-erp.onrender.com/login",
           "title": "View Demo"
         }
@@ -29,6 +30,7 @@
         },
         {
           "text": "demo",
+          "className": "demo",
           "href": "https://notehub-38kp.onrender.com/",
           "title": "View Demo"
         }
@@ -46,6 +48,7 @@
         },
         {
           "text": "demo",
+          "className": "demo",
           "href": "https://chessleague.netlify.app",
           "title": "View Demo"
         }
@@ -80,6 +83,7 @@
         },
         {
           "text": "demo",
+          "className": "demo",
           "href": "https://path-explorer.netlify.app",
           "title": "View Demo"
         }
@@ -97,6 +101,7 @@
         },
         {
           "text": "demo",
+          "className": "demo",
           "href": "https://sortsimulator.netlify.app",
           "title": "View Demo"
         }
@@ -114,6 +119,7 @@
         },
         {
           "text": "demo",
+          "className": "demo",
           "href": "https://whisper-chat-app-m4ks.onrender.com",
           "title": "View Demo"
         }
@@ -131,6 +137,7 @@
         },
         {
           "text": "demo",
+          "className": "demo",
           "href": "https://chessleague.netlify.app",
           "title": "View Demo"
         }
@@ -148,6 +155,7 @@
         },
         {
           "text": "demo",
+          "className": "demo",
           "href": "https://numpie.netlify.app/",
           "title": "View Demo"
         }
@@ -165,6 +173,7 @@
         },
         {
           "text": "demo",
+          "className": "demo",
           "href": "https://fingersfast.netlify.app/",
           "title": "View Demo"
         }
@@ -182,6 +191,7 @@
         },
         {
           "text": "demo",
+          "className": "demo",
           "href": "https://2dsnake.netlify.app",
           "title": "View Demo"
         }

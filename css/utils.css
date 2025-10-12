@@ -16,6 +16,10 @@ li span{
     color: #ffeea6;
 }
 
+strong{
+    font-weight: 600;
+}
+
 .btn-wrapper {
     display: flex;
     /* flex-wrap: wrap; */

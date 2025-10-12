@@ -197,6 +197,9 @@ section#projects .card-wrapper {
     z-index: -1;
 }
 
+.btn.demo{
+}
+
 .card .wrapper {
     display: flex;
     grid-gap: 18px;
@@ -351,10 +354,10 @@ section#expertise .lists li::after {
     margin-bottom: 20px;
 }
 .valid:focus{
-    border-color: #bca358;
+    outline: 3px solid #bca358;
 }
 .invalid:focus{
-    border-color: #b84c4c;
+    outline: 3px solid #b84c4c;
 }
 input, textarea {
     padding: 15px 20px;
