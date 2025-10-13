@@ -113,11 +113,12 @@ section#hero {
 
 #hero .content p {
   font-size: 16px;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 #hero .content .cta-wrapper {
   margin-top: 28px;
+  margin-bottom: 20px;
 }
 #hero .content .cta-wrapper a,
 #hero .content .cta-wrapper button {
