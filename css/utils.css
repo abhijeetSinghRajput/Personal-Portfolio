@@ -14,6 +14,7 @@ p .a:hover {
 p span,
 li span{
     color: #ffeea6;
+    font-weight: 600;
 }
 
 strong{
