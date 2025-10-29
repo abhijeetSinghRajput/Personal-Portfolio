@@ -132,8 +132,3 @@ function updateDataset(chart, skillElement, labels, values, title) {
         skillElement.bar[i].style.width = `${values[i]}%`;
     }
 }
-
-
-
-
-
