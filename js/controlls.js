@@ -75,7 +75,7 @@ function renderProjects(parent, data) {
                         <img src="${e.image}" alt="Project Thumbnail" loading="lazy">
                     </div>
                     <div class="content">
-                        <h4>${e.name}</h4>
+                        <h3>${e.name}</h3>
                         <p>${e.description}</p>
                         <div class="btn-wrapper">
                             ${btnFragments(e.btns).join('')}

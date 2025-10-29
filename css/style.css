@@ -212,6 +212,10 @@ section > h2 {
   margin-bottom: 16px;
 }
 
+#education li strong {
+  font-weight: bold;
+}
+
 /* ==================================== */
 /* ================== project section  */
 /* ================================== */
@@ -328,12 +332,12 @@ section#expertise .lists li::after {
 /* ==================================== */
 /* ================== project section  */
 /* ================================== */
-.card .content h4 {
+.card .content h3 {
   text-transform: capitalize;
   transition: 0.3s ease;
 }
 
-.card:hover h4 {
+.card:hover h3 {
   color: #e4c466;
 }
 
@@ -349,7 +353,7 @@ section#expertise .lists li::after {
   margin-bottom: 25px;
 }
 
-.skill h5 {
+.skill strong {
   white-space: nowrap;
   font-size: 15px;
   color: #fafafa;
@@ -526,7 +530,7 @@ input::placeholder {
     margin-bottom: 15px;
   }
 
-  .skill h5 {
+  .skill strong {
     font-weight: 500;
     font-size: 13px;
   }
@@ -549,7 +553,7 @@ input::placeholder {
 }
 
 @media screen and (max-width: 550px) {
-  .card .content h4 {
+  .card .content h3 {
     color: #e4c466;
     font-size: 18px;
     margin-bottom: 8px;
