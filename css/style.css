@@ -243,6 +243,11 @@ section > h2 {
 /* ==================================== */
 /* ================== project section  */
 /* ================================== */
+section#projects {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
 section#projects .card-wrapper .btn-wrapper {
   margin-top: 32px;
 }
@@ -398,6 +403,10 @@ section#expertise .lists li::after {
   display: block;
 }
 
+.skill li .skill-label {
+  display: flex;
+  gap: 8px;
+}
 .skill li {
   padding: 0;
   margin-bottom: 25px;

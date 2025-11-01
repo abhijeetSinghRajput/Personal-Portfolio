@@ -29,7 +29,7 @@ fetch('skills.json')
         web_chart = renderChart(web_ctx, data.Frontend, 'Frontend');
     })
     .catch(e => {
-        // console.error(e);
+        console.error(e);
     });
 
 
@@ -40,8 +40,10 @@ function renderBars(parent, data) {
     const htmlFragments = Object.entries(data).map(([label, value]) => {
         return `
             <li>
-                <strong>${label}</strong>
-                <data value="${value}">${value}%</data>
+                <div class="skill-label">
+                    <h5>${label}</h5>
+                    <data value="${value}">${value}%</data>
+                </div>
                 <div class="skill-progress">
                     <div class="bar" style="width: ${value}%;"></div>
                 </div>
