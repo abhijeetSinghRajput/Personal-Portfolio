@@ -76,7 +76,7 @@ function renderProjects(parent, data) {
                     </div>
                     <div class="content">
                         <h3>${e.name}</h3>
-                        <p>${e.description}</p>
+                        <p class="text-muted-foreground">${e.description}</p>
                         <div class="btn-wrapper">
                             ${btnFragments(e.btns).join('')}
                         </div>

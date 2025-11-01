@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +18,23 @@ html {
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: white;
+  background-color: #383838;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.badge img{
+  width: 16px;
+  height: 16px;
 }
 
 body {
@@ -109,17 +125,26 @@ section#hero {
   margin-top: 12px;
 }
 
+#hero .content .description {
+  margin-top: 20px;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 #hero .content p {
   font-size: 16px;
-  margin-top: 20px;
 }
 
 #hero .content .cta-wrapper {
-  margin-top: 28px;
+  gap: 16px;
+  margin-top: 42px;
   margin-bottom: 20px;
 }
-#hero .content .cta-wrapper a,
+#hero .content .cta-wrapper .cta,
 #hero .content .cta-wrapper button {
+  margin-right: 8px;
   color: white;
   padding: 12px 20px;
   font-weight: 600;
@@ -285,7 +310,7 @@ section#projects .card-wrapper {
 
 .lists li {
   margin-bottom: 30px;
-  color: rgb(250, 250, 250);
+
   position: relative;
   padding-left: 30px;
   font-size: 15px;

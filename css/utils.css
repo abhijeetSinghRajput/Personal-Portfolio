@@ -6,6 +6,9 @@ p {
 p .a {
     color: #fcd37a;
 }
+.text-muted-foreground {
+    color: #a3a3a3;
+}
 
 p .a:hover {
     color: #ffeea6;
