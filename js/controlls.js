@@ -48,48 +48,6 @@ function optionSlector(options){
     })
 }
 
-const projects = document.querySelector('#projects .card-wrapper');
-fetch('projects.json')
-    .then((res) => {
-        if (res.ok) return res.json();
-    })
-    .then(data => {
-        renderProjects(projects, data.projects);
-    })
-    .catch(e => {
-        // console.error(e);
-    });
-
-function renderProjects(parent, data) {
-    const btnFragments = (btns) => {
-        return btns.map(({ href, text, title, className }) => {
-            return `<a target="_blank" title="${title}" href="${href}" class="btn ${className}">${text}</a>`;
-        });
-    };
-
-    const htmlFragments = data.map((e) => {
-        return `
-            <div class="card ${e.className}">
-                <div class="wrapper">
-                    <div class="preview">
-                        <img src="${e.image}" alt="Project Thumbnail" loading="lazy">
-                    </div>
-                    <div class="content">
-                        <h3>${e.name}</h3>
-                        <p class="text-muted-foreground">${e.description}</p>
-                        <div class="btn-wrapper">
-                            ${btnFragments(e.btns).join('')}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-
-    // Join all HTML fragments into a single string and assign to innerHTML
-    parent.innerHTML = htmlFragments.join('');
-}
-
 
 // helper function to update chart data on btn interaction
 function updateChart(field, type) {

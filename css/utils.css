@@ -30,20 +30,30 @@ strong{
     gap: 10px;
     margin-top: 20px;
 }
+.btn img{
+    width: 16px;
+    height: 16px;
+}
 .btn{
     user-select: none;
     cursor: pointer;
     background-color: #2b2b2c;
-    padding: 5px 18px;
+    padding: 8px 12px;
+    height: 36px;
     border-radius: 8px;
     color: #fafafa;
-    border: 2px solid #383839;
     text-align: center;
     text-transform: capitalize;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: .3s ease;
 }
 .btn.active,
 .btn:hover {
-    border-color: #909090;
+    filter: brightness(0.9);
 }
 .icon{
     aspect-ratio: 1;
