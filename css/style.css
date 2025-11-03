@@ -32,7 +32,7 @@ html {
   gap: 2px;
 }
 
-.badge img{
+.badge img {
   width: 16px;
   height: 16px;
 }
@@ -135,7 +135,6 @@ section#hero {
 
 #hero .content p {
   font-size: 16px;
-
 }
 
 #hero .content .cta-wrapper {
@@ -230,12 +229,31 @@ section#hero {
 section > h2 {
   padding: 20px 24px;
   margin: 0px -24px 16px;
+  padding-top: 0;
 }
 
 #about h3 {
   font-size: 16px;
   margin-top: 30px;
   margin-bottom: 12px;
+}
+
+#about .content {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+}
+#about .content .avatar {
+  flex-shrink: 0;
+  width: 128px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 28px;
+}
+#about .content .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #about p {
@@ -250,7 +268,7 @@ section > h2 {
   width: 24px;
   height: 24px;
 }
-#about .technologies .badges{
+#about .technologies .badges {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -285,7 +303,7 @@ section#projects .card p {
   text-overflow: ellipsis;
 }
 
-section#projects .technologies{
+section#projects .technologies {
   margin-top: 10px;
 }
 section#projects .technologies .icons {
@@ -293,7 +311,7 @@ section#projects .technologies .icons {
   display: flex;
   gap: 10px;
 }
-section#projects .technologies img{
+section#projects .technologies img {
   width: 24px;
   aspect-ratio: 1;
 }
@@ -549,7 +567,7 @@ input::placeholder {
     font-size: 40px;
   }
 
-    .card {
+  .card {
     padding: 0;
   }
 
@@ -579,7 +597,7 @@ input::placeholder {
     grid-template-columns: 1fr;
   }
   .container {
-    padding: 15px;
+    padding: 24px 15px;
     margin: 8px;
     margin-bottom: 20px;
   }
@@ -651,10 +669,12 @@ input::placeholder {
     width: 250px;
     height: 250px;
   }
-
 }
 
 @media screen and (max-width: 550px) {
+  #about .content {
+    flex-direction: column-reverse;
+  }
   .card .content h3 {
     color: #e4c466;
     font-size: 18px;
