@@ -232,8 +232,27 @@ section > h2 {
   margin: 0px -24px 16px;
 }
 
+#about h3 {
+  font-size: 16px;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
 #about p {
   margin-bottom: 16px;
+}
+
+#about .technologies .badge {
+  gap: 8px;
+}
+#about .technologies .badges img {
+  width: 24px;
+  height: 24px;
+}
+#about .technologies .badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 #education li strong {

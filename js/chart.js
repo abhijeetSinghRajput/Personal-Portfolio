@@ -8,10 +8,9 @@ let dsa_chart = null;
 let web_chart = null;
 
 const dsa_ctx = document.getElementById('dsa_chart').getContext('2d');
-const web_ctx = document.getElementById('web_chart').getContext('2d');
 
 // Create gradient
-const gradient = web_ctx.createLinearGradient(0, 0, 0, 400);
+const gradient = dsa_ctx.createLinearGradient(0, 0, 0, 400);
 gradient.addColorStop(0, 'rgba(255, 50, 0, 0.75)');
 gradient.addColorStop(1, 'rgba(254, 202, 102, 0.75)');
 
@@ -23,10 +22,8 @@ fetch('skills.json')
     .then(data => {
         skillData = data;
         dsa_skillElement = renderBars(dsa_skills, data.DSA.Advanced);
-        web_skillElement = renderBars(web_skills, data.Frontend);
 
         dsa_chart = renderChart(dsa_ctx, data.DSA.Fundamental, 'Fundamental');
-        web_chart = renderChart(web_ctx, data.Frontend, 'Frontend');
     })
     .catch(e => {
         console.error(e);
