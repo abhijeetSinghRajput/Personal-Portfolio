@@ -52,6 +52,12 @@ strong{
     gap: 6px;
     transition: .3s ease;
 }
+
+.btn.primary {
+  background-color: white;
+  color: black;
+}
+
 .btn.active,
 .btn:hover {
     filter: brightness(0.9);

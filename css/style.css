@@ -23,7 +23,7 @@ html {
 .badge {
   padding: 4px 8px;
   border-radius: 8px;
-  font-size: 14px !important;
+  font-size: 14px;
   color: white;
   background-color: #383838;
   font-weight: 600;
@@ -242,7 +242,13 @@ section > h2 {
   display: flex;
   gap: 20px;
   align-items: start;
+  justify-content: space-between;
 }
+#about .content > div {
+  /* border: 1px solid white; */
+  max-width: 560px;
+}
+
 #about .content .avatar {
   flex-shrink: 0;
   width: 128px;
@@ -283,6 +289,7 @@ section > h2 {
 /* ================================== */
 section#projects {
   background-color: transparent;
+  box-shadow: none;
   border: none;
   padding: 0;
 }
@@ -294,6 +301,11 @@ section#projects .card-wrapper {
   flex-direction: column;
   gap: 10px;
 }
+
+section#projects .card h3 {
+  margin-bottom: 8px;
+}
+
 section#projects .card p {
   font-size: 16px;
   display: -webkit-box;
@@ -348,11 +360,6 @@ section#projects .technologies img {
   z-index: -1;
 }
 
-.btn.demo {
-  background-color: white;
-  color: black;
-}
-
 .card .wrapper {
   display: flex;
   grid-gap: 42px;
@@ -383,7 +390,6 @@ section#projects .technologies img {
 
   position: relative;
   padding-left: 30px;
-  font-size: 15px;
 }
 
 .lists li::before {
@@ -422,9 +428,6 @@ section#expertise .lists li::after {
   height: calc(100% + 16px);
 }
 
-/* ==================================== */
-/* ================== project section  */
-/* ================================== */
 .card .content h3 {
   text-transform: capitalize;
   transition: 0.3s ease;
@@ -434,9 +437,22 @@ section#expertise .lists li::after {
   color: #e4c466;
 }
 
+#toggle-all-projects {
+  margin-top: 30px;
+  height: 44px;
+  align-items: center;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ==================================== */
 /* ================== skills section  */
 /* ================================== */
+h5 {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
 .skill {
   display: block;
 }
@@ -686,10 +702,6 @@ input::placeholder {
     justify-content: center;
   }
 
-  p {
-    font-size: 14px !important;
-  }
-
   section#projects .card-wrapper {
     gap: 30px;
   }
@@ -725,7 +737,6 @@ input::placeholder {
 
   #skills .btn-wrapper .btn {
     padding: 2.5px 9px;
-    font-size: 14px;
     text-align: center;
   }
 }
