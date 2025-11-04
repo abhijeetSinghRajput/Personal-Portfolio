@@ -251,10 +251,10 @@ section > h2 {
 
 #about .content .avatar {
   flex-shrink: 0;
-  width: 128px;
+  width: 174px;
   aspect-ratio: 1;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 18px;
 }
 #about .content .avatar img {
   width: 100%;
@@ -262,7 +262,7 @@ section > h2 {
   object-fit: cover;
 }
 
-#about p {
+#about p:not(:last-child) {
   margin-bottom: 16px;
 }
 
@@ -297,9 +297,9 @@ section#projects .card-wrapper .btn-wrapper {
   margin-top: 32px;
 }
 section#projects .card-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 section#projects .card h3 {
@@ -331,7 +331,6 @@ section#projects .technologies img {
 .card {
   /* width: max-content; */
   height: max-content;
-  padding: 30px;
   border-radius: 14px;
   font-size: 15px;
   box-shadow: 0 16px 30px hsla(0, 0%, 0%, 0.25);
@@ -343,6 +342,7 @@ section#projects .technologies img {
   position: relative;
   z-index: 1;
   color: #fafafa;
+  overflow: hidden;
 }
 
 .card::before {
@@ -360,17 +360,12 @@ section#projects .technologies img {
   z-index: -1;
 }
 
-.card .wrapper {
-  display: flex;
-  grid-gap: 42px;
-}
-
 .preview {
   flex-shrink: 0;
-  border-radius: 14px;
+  /* border-radius: 14px; */
   overflow: hidden;
-  height: 160px;
-  aspect-ratio: 1/0.65;
+  height: 200px;
+  /* aspect-ratio: 1/0.65; */
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.3);
 }
 
@@ -381,6 +376,9 @@ section#projects .technologies img {
   transition: 0.3s ease;
 }
 
+.card .content {
+  margin: 30px;
+}
 .card:hover .preview img {
   transform: scale(1.1);
 }
@@ -579,6 +577,10 @@ input::placeholder {
 }
 
 @media screen and (max-width: 770px) {
+  #about .content {
+    flex-direction: column;
+  }
+
   #hero .content #name {
     font-size: 40px;
   }
@@ -596,25 +598,24 @@ input::placeholder {
     height: auto;
   }
 
-  .card .wrapper {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .card .content {
-    padding: 16px;
-  }
 }
 @media screen and (max-width: 680px) {
   body {
     margin-top: 60px;
   }
+
+  section#projects .card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   #contact-form {
     grid-template-columns: 1fr;
   }
   .container {
     padding: 24px 15px;
-    margin: 8px;
+    margin: 12px;
     margin-bottom: 20px;
   }
 
@@ -688,9 +689,6 @@ input::placeholder {
 }
 
 @media screen and (max-width: 550px) {
-  #about .content {
-    flex-direction: column-reverse;
-  }
   .card .content h3 {
     color: #e4c466;
     font-size: 18px;
@@ -700,10 +698,6 @@ input::placeholder {
   #message-btn {
     width: 100%;
     justify-content: center;
-  }
-
-  section#projects .card-wrapper {
-    gap: 30px;
   }
 
   .card {
@@ -717,15 +711,6 @@ input::placeholder {
     border-bottom: 1px solid #383838;
     margin: 1px;
     height: auto;
-  }
-
-  .card .wrapper {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .card .content {
-    padding: 16px;
   }
 
   #skills .btn-wrapper {
