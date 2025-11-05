@@ -23,7 +23,7 @@ html {
 .badge {
   padding: 4px 8px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 12px;
   color: white;
   background-color: #383838;
   font-weight: 600;
@@ -268,11 +268,11 @@ section > h2 {
 
 #about .technologies .badge {
   gap: 4px;
-  padding: 6px 10px;
+  font-size: 13px;
 }
 #about .technologies .badges img {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
 #about .technologies .badges {
   display: flex;

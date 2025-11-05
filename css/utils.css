@@ -3,17 +3,19 @@ p {
     line-height: 1.4rem;
 }
 
-p .a {
-    color: #fcd37a;
+p a {
+    color: #a3a3a3;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 .text-muted-foreground {
     color: #a3a3a3;
 }
 
-p .a:hover {
-    color: #ffeea6;
-    text-decoration: underline;
+p a:hover {
+    filter: brightness(0.8);
 }
+p span a,
 p span,
 li span{
     color: #ffeea6;
