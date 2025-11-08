@@ -37,10 +37,8 @@ function renderBars(parent, data) {
     const htmlFragments = Object.entries(data).map(([label, value]) => {
         return `
             <li>
-                <div class="skill-label">
-                    <h5>${label}</h5>
-                    <data value="${value}">${value}%</data>
-                </div>
+                <strong>${label}</strong>
+                <data value="${value}">${value}%</data>
                 <div class="skill-progress">
                     <div class="bar" style="width: ${value}%;"></div>
                 </div>
