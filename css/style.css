@@ -244,10 +244,6 @@ section > h2 {
   align-items: start;
   justify-content: space-between;
 }
-#about .content > div {
-  /* border: 1px solid white; */
-  max-width: 560px;
-}
 
 #about .content .avatar {
   flex-shrink: 0;
