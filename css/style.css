@@ -156,28 +156,6 @@ section#hero {
   }
 }
 
-.status{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #0e4429;
-  width: max-content;
-  height: max-content;
-  color: #43ff62;
-  border-radius: 100px;
-  padding: 2px 11px;
-  z-index: 50;
-  position: absolute;
-  bottom: 0;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-}
-
-.status p{
-  font-size: 14px;
-  font-weight: 600;
-}
 
 #hero .content h2 {
   font-family: "Orbitron", sans-serif;
@@ -265,25 +243,24 @@ section#hero {
 #hero .profile-photo {
   flex: 1;
   position: relative;
-  /* border: 1px solid white; */
+  border-radius: 50%;
   height: 300px;
-  aspect-ratio: 1;
+  overflow: hidden;
 }
 
 #hero .profile-photo img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+#hero .profile-photo .status{
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   position: absolute;
-}
-
-#hero .profile-photo img.blob {
-  opacity: 0.8;
-}
-
-#hero .profile-photo img.avatar {
-  z-index: 2;
-  transform: scale(1);
+  left: 0;
+  transform: rotate(-16deg);
+  z-index: 100;
 }
 
 /* ==================================== */
@@ -713,9 +690,8 @@ input::placeholder {
 
   #hero .profile-photo {
     flex: 1;
-    /* border: 1px solid white; */
     width: 200px;
-    aspect-ratio: 1;
+    height: 200px;
   }
 
   .skill li {
