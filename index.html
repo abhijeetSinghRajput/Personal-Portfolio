@@ -54,6 +54,7 @@
       href="https://mrcodium.netlify.app/assets/favicon.ico?v=3"
       type="image/x-icon"
     />
+    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
     <link rel="stylesheet" href="./dist/css/style.min.css" />
     <link rel="stylesheet" href="./dist/css/utils.min.css" />
     <link rel="stylesheet" href="./dist/css/calendar.min.css" />
@@ -70,18 +71,32 @@
   <body>
     <nav>
       <div>
-        <ul>
-          <li class="nav-item">
-            <a href="#about" title="More about Abhijeet Singh">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="#projects" title="View Projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a href="#education" title="Abhijeet's Qualifications">Education</a>
-          </li>
-        </ul>
-        <a href="#contact" class="gold">Contact</a>
+        <div class="left">
+          <a href="#" id="logo">
+            <img src="./assets/avatar.webp" alt="Abhijeet Singh Rajput" />
+          </a>
+
+          <ul>
+            <li class="nav-item">
+              <a href="#about" title="More about Abhijeet Singh">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#projects" title="View Projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="#education" title="Abhijeet's Qualifications"
+                >Education</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <a href="#contact" class="gold">
+          <span class="icon">
+            <img src="./assets//icons/phone.svg" alt="" />
+          </span>
+          <span class="text"> Contact </span>
+        </a>
       </div>
     </nav>
     <main class="body">
@@ -1260,4 +1275,15 @@
   <script src="dist/js/controlls.min.js" defer></script>
   <script src="dist/js/github.min.js" defer></script>
   <script src="dist/js/form.min.js" defer></script>
+  <script>
+    const logo = document.getElementById("logo");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= window.innerHeight) {
+        logo.classList.add("show");
+      } else {
+        logo.classList.remove("show");
+      }
+    });
+  </script>
 </html>
