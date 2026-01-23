@@ -54,7 +54,11 @@
       href="https://mrcodium.netlify.app/assets/favicon.ico?v=3"
       type="image/x-icon"
     />
-    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    
+    <!-- <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/utils.css" />
+    <link rel="stylesheet" href="./css/calendar.css" /> -->
+
     <link rel="stylesheet" href="./dist/css/style.min.css" />
     <link rel="stylesheet" href="./dist/css/utils.min.css" />
     <link rel="stylesheet" href="./dist/css/calendar.min.css" />
@@ -290,8 +294,10 @@
       <section id="about" class="container">
         <h2>About</h2>
         <div class="content">
-          <div class="avatar">
-            <img src="./assets/avatar.jpg" alt="Abhijeet Singh Rajput" />
+          <div class="avatar-slot">
+            <div class="avatar">
+              <img src="./assets/avatar.jpg" alt="Abhijeet Singh Rajput" />
+            </div>
           </div>
 
           <div class="text-muted-foreground">
@@ -1277,13 +1283,85 @@
   <script src="dist/js/form.min.js" defer></script>
   <script>
     const logo = document.getElementById("logo");
+    const slot = document.querySelector(".avatar-slot");
+    const avatar = document.querySelector(".avatar");
+    const img = avatar.querySelector("img");
+
+    const avatarSize = 174;
+    const collapsedSize = 42;
+    const morphRange = 200;
+
+    let isFixed = false;
+    let fixedStartRect = null;
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY >= window.innerHeight) {
+      const slotRect = slot.getBoundingClientRect();
+
+      // start morph when avatar center crosses viewport center
+      const startY =
+        slotRect.top +
+        window.scrollY -
+        window.innerHeight / 2 +
+        slotRect.height / 2;
+
+      const scrollY = window.scrollY;
+
+      // BEFORE morph
+      if (scrollY < startY) {
+        avatar.style.position = "relative";
+        avatar.style.top = "auto";
+        avatar.style.left = "auto";
+        avatar.style.width = `${avatarSize}px`;
+        avatar.style.height = `${avatarSize}px`;
+        img.style.borderRadius = "18px";
+        slot.style.height = `${avatarSize}px`;
+
+        isFixed = false;
+        fixedStartRect = null;
+        return;
+      }
+
+      // 🔑 lock exact visual position ONCE
+      if (!isFixed) {
+        fixedStartRect = avatar.getBoundingClientRect();
+
+        avatar.style.position = "fixed";
+        avatar.style.top = `${fixedStartRect.top}px`;
+        avatar.style.left = `${fixedStartRect.left}px`;
+        avatar.style.zIndex = 1000;
+
+        isFixed = true;
+      }
+
+      const logoRect = logo.getBoundingClientRect();
+
+      const progress = Math.min(
+        Math.max((scrollY - startY) / morphRange, 0),
+        1,
+      );
+
+      // toggle logo visibility with morph
+      if (progress > 0.15) {
         logo.classList.add("show");
       } else {
         logo.classList.remove("show");
       }
+
+      const size = avatarSize - progress * (avatarSize - collapsedSize);
+
+      // interpolate position from locked start → logo
+      const top =
+        fixedStartRect.top + (logoRect.top - fixedStartRect.top) * progress;
+      const left =
+        fixedStartRect.left + (logoRect.left - fixedStartRect.left) * progress;
+
+      avatar.style.width = `${size}px`;
+      avatar.style.height = `${size}px`;
+      avatar.style.top = `${top}px`;
+      avatar.style.left = `${left}px`;
+
+      img.style.borderRadius = `${18 + progress * (50 - 18)}%`;
+      slot.style.height = `${size}px`;
     });
   </script>
 </html>

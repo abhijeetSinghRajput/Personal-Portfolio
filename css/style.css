@@ -48,19 +48,21 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
+  position: relative;
+  z-index: 1002;
 
   opacity: 0;
   transform: translateX(-20px);
 
   transition:
-    width 0.4s ease,
-    opacity 0.3s ease,
-    transform 0.4s ease;
+    width 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 #logo.show {
   width: 42px;
-  opacity: 1;
+  opacity: 0;
   transform: translateX(0);
 }
 
@@ -324,19 +326,38 @@ section > h2 {
   justify-content: space-between;
 }
 
-#about .content .avatar {
-  flex-shrink: 0;
+#about .content .avatar-slot {
   width: 174px;
-  aspect-ratio: 1;
+  height: 174px;
+  flex-shrink: 0;
+}
+
+#about .content .avatar {
+  width: 174px;
+  height: 174px;          /* avoid relying only on aspect-ratio */
   overflow: hidden;
   border-radius: 18px;
-  position: relative;
+  position: relative;     /* normal flow */
+  flex-shrink: 0;
+  pointer-events: none;
 }
+
+#about .content .avatar.fixed {
+  position: fixed;
+  top: 12px;
+  left: var(--avatar-left);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
 #about .content .avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 
 #about p:not(:last-child) {
   margin-bottom: 16px;
