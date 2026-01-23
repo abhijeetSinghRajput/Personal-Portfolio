@@ -54,7 +54,7 @@
       href="https://mrcodium.netlify.app/assets/favicon.ico?v=3"
       type="image/x-icon"
     />
-    
+
     <!-- <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/utils.css" />
     <link rel="stylesheet" href="./css/calendar.css" /> -->
@@ -1297,7 +1297,6 @@
     window.addEventListener("scroll", () => {
       const slotRect = slot.getBoundingClientRect();
 
-      // start morph when avatar center crosses viewport center
       const startY =
         slotRect.top +
         window.scrollY -
@@ -1306,8 +1305,19 @@
 
       const scrollY = window.scrollY;
 
-      // BEFORE morph
-      if (scrollY < startY) {
+      // 🔑 ALWAYS compute progress first
+      const rawProgress = (scrollY - startY) / morphRange;
+      const progress = Math.min(Math.max(rawProgress, 0), 1);
+
+      // 🔑 logo toggle MUST run unconditionally
+      if (progress > 0.15) {
+        logo.classList.add("show");
+      } else {
+        logo.classList.remove("show");
+      }
+
+      // BEFORE morph (safe early return)
+      if (progress <= 0) {
         avatar.style.position = "relative";
         avatar.style.top = "auto";
         avatar.style.left = "auto";
@@ -1335,21 +1345,8 @@
 
       const logoRect = logo.getBoundingClientRect();
 
-      const progress = Math.min(
-        Math.max((scrollY - startY) / morphRange, 0),
-        1,
-      );
-
-      // toggle logo visibility with morph
-      if (progress > 0.15) {
-        logo.classList.add("show");
-      } else {
-        logo.classList.remove("show");
-      }
-
       const size = avatarSize - progress * (avatarSize - collapsedSize);
 
-      // interpolate position from locked start → logo
       const top =
         fixedStartRect.top + (logoRect.top - fixedStartRect.top) * progress;
       const left =

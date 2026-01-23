@@ -97,7 +97,7 @@ nav > div {
 
 nav .left {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   align-items: center;
 }
 
@@ -716,7 +716,6 @@ input::placeholder {
 
   nav > div {
     padding: 0 16px;
-    height: 60px;
     font-size: 15px;
   }
 
@@ -821,10 +820,6 @@ input::placeholder {
 }
 
 @media screen and (max-width: 420px) {
-  nav .left {
-    gap: 8px;
-  }
-
   .gold .icon {
     display: inline-block !important;
   }
