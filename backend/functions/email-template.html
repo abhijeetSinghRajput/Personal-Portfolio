@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Message from Portfolio</title>
+    <style>
+        /* Responsive font sizes */
+        @media screen and (max-width: 600px) {
+            .header-title {
+                font-size: 20px !important;
+            }
+            .main-text {
+                font-size: 14px !important;
+            }
+            .message-text {
+                font-size: 14px !important;
+            }
+            .contact-label {
+                font-size: 12px !important;
+            }
+            .contact-info {
+                font-size: 13px !important;
+            }
+            .footer-text {
+                font-size: 12px !important;
+            }
+            .copyright {
+                font-size: 11px !important;
+            }
+            .main-padding {
+                padding: 30px 20px !important;
+            }
+            .header-padding {
+                padding: 25px 20px !important;
+            }
+            .footer-padding {
+                padding: 25px 20px !important;
+            }
+            .logo-img {
+                width: 50px !important;
+                height: 50px !important;
+            }
+        }
+        
+        @media screen and (max-width: 400px) {
+            .header-title {
+                font-size: 18px !important;
+            }
+            .main-text {
+                font-size: 13px !important;
+            }
+            .main-padding {
+                padding: 25px 15px !important;
+            }
+            .header-padding {
+                padding: 20px 15px !important;
+            }
+            .footer-padding {
+                padding: 20px 15px !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #0a0a0a;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #0a0a0a;">
+        <tr>
+            <td align="center" style="padding: 40px 10px;">
+                <table role="presentation" style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #1a1a1a; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
+                    
+                    <!-- Header with Logo -->
+                    <tr>
+                        <td class="header-padding" style="background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%); padding: 30px; text-align: center; border-bottom: 2px solid #333;">
+                            <img src="https://mrcodium.netlify.app/assets/avatar.jpg" alt="Logo" class="logo-img" style="width: 60px; height: 60px; object-fit: cover; margin-bottom: 15px; display: inline-block; border-radius: 50%;">
+                            <h1 class="header-title" style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 600; letter-spacing: -0.5px;">New Message Received</h1>
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="main-padding" style="padding: 40px 30px;">
+                            <p class="main-text" style="margin: 0 0 20px 0; color: #e0e0e0; font-size: 16px; line-height: 1.6;">
+                                Hello <strong style="color: #ffffff;">{{to_name}}</strong>,
+                            </p>
+                            
+                            <p class="main-text" style="margin: 0 0 25px 0; color: #e0e0e0; font-size: 16px; line-height: 1.6;">
+                                You have received a new message from <strong style="color: #ffffff;">{{from_name}}</strong> through your portfolio contact form:
+                            </p>
+                            
+                            <!-- Message Box -->
+                            <div style="background-color: #252525; border-left: 4px solid #ffdb70; border-radius: 6px; padding: 20px 24px; margin: 25px 0;">
+                                <p class="message-text" style="margin: 0; color: #d0d0d0; font-size: 15px; line-height: 1.7; font-style: italic;">
+                                    {{message}}
+                                </p>
+                            </div>
+                            
+                            <!-- Sender Info Box -->
+                            <div style="background-color: #1e1e1e; border-radius: 6px; padding: 18px 24px; margin: 25px 0;">
+                                <p class="contact-label" style="margin: 0 0 8px 0; color: #999; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Contact Details</p>
+                                <p class="contact-info" style="margin: 0; color: #e0e0e0; font-size: 14px; line-height: 1.6;">
+                                    <strong style="color: #ffffff;">From:</strong> {{from_name}}<br>
+                                    <strong style="color: #ffffff;">Email:</strong> <a href="mailto:{{from_email}}" style="color: #ffdb70; text-decoration: none;">{{from_email}}</a>
+                                </p>
+                            </div>
+                            
+                            <p class="main-text" style="margin: 25px 0 0 0; color: #b0b0b0; font-size: 14px; line-height: 1.6;">
+                                Reply directly to this email to get in touch with {{from_name}}.
+                            </p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer-padding" style="background-color: #151515; padding: 30px; border-top: 1px solid #2a2a2a;">
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="text-align: center; padding-bottom: 15px;">
+                                        <img src="https://mrcodium.netlify.app/assets/abhijeet-signature.png" alt="Signature" style="max-width: 100px; height: auto; display: inline-block;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">
+                                        <p class="footer-text" style="margin: 0; color: #666; font-size: 13px; line-height: 1.6;">
+                                            This message was sent via your portfolio contact form<br>
+                                            <a href="https://mrcodium.netlify.app" style="color: #ffdb70; text-decoration: none;">mrcodium.netlify.app</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                </table>
+                
+                <!-- Bottom Spacing -->
+                <p class="copyright" style="margin: 20px 0 0 0; color: #555; font-size: 12px; text-align: center;">
+                    © 2024 Abhijeet Singh Rajput. All rights reserved.
+                </p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

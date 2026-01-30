@@ -4,98 +4,102 @@ const emailInput = document.getElementById("email");
 const messageInput = document.getElementById("message");
 const messageBtn = document.getElementById("message-btn");
 
-const loader = document.querySelector('.loader');
-const alertBox = document.querySelector('.alert');
+const loader = document.querySelector(".loader");
+const alertBox = document.querySelector(".alert");
 
-const nameRegex = /^[a-zA-Z\s'-\.]+$/;
+const nameRegex = /^[a-zA-Z\s'.-]+$/;
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const messageRegex = /\S+/;
 
-
+/* ---------- Validation ---------- */
 function validateForm() {
-    let isValid = true;
+  let isValid = true;
 
-    // Name validation
-    if (nameRegex.test(fullNameInput.value)) {
-        fullNameInput.classList.add('valid');
-        fullNameInput.classList.remove('invalid');
-    } else {
-        fullNameInput.classList.add('invalid');
-        fullNameInput.classList.remove('valid');
-        isValid = false;
-    }
+  // Name
+  if (nameRegex.test(fullNameInput.value.trim())) {
+    fullNameInput.classList.add("valid");
+    fullNameInput.classList.remove("invalid");
+  } else {
+    fullNameInput.classList.add("invalid");
+    fullNameInput.classList.remove("valid");
+    isValid = false;
+  }
 
-    // Email validation
-    if (emailRegex.test(emailInput.value)) {
-        emailInput.classList.add('valid');
-        emailInput.classList.remove('invalid');
-    } else {
-        emailInput.classList.add('invalid');
-        emailInput.classList.remove('valid');
-        isValid = false;
-    }
+  // Email
+  if (emailRegex.test(emailInput.value.trim())) {
+    emailInput.classList.add("valid");
+    emailInput.classList.remove("invalid");
+  } else {
+    emailInput.classList.add("invalid");
+    emailInput.classList.remove("valid");
+    isValid = false;
+  }
 
-    // Message validation
-    if (messageRegex.test(messageInput.value)) {
-        messageInput.classList.add('valid');
-        messageInput.classList.remove('invalid');
-    } else {
-        messageInput.classList.add('invalid');
-        messageInput.classList.remove('valid');
-        isValid = false;
-    }
+  // Message
+  if (messageRegex.test(messageInput.value.trim())) {
+    messageInput.classList.add("valid");
+    messageInput.classList.remove("invalid");
+  } else {
+    messageInput.classList.add("invalid");
+    messageInput.classList.remove("valid");
+    isValid = false;
+  }
 
-    messageBtn.disabled = !isValid;
-    return isValid;
+  messageBtn.disabled = !isValid;
+  return isValid;
 }
 
-validateForm();
-fullNameInput.onfocus = validateForm;
-emailInput.oninput = validateForm;
-fullNameInput.oninput = validateForm;
-messageInput.oninput = validateForm;
+/* ---------- Events ---------- */
+["input", "blur"].forEach((evt) => {
+  fullNameInput.addEventListener(evt, validateForm);
+  emailInput.addEventListener(evt, validateForm);
+  messageInput.addEventListener(evt, validateForm);
+});
 
-messageBtn.onclick = async () => {
-    const data = {
-        name: fullNameInput.value,
-        email: emailInput.value,
-        message: messageInput.value,
-    };
-    loader.classList.add('show');
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+ if (!validateForm()) return;
 
-    
-    fullNameInput.value = "";
-    emailInput.value = "";
-    messageInput.value = "";
-    messageBtn.disabled = true;
+  const data = {
+    from_name: fullNameInput.value.trim(),
+    from_email: emailInput.value.trim(),
+    message: messageInput.value.trim(),
+    to_name: "Abhijeet",
+  };
 
-    try {
-        const response = await fetch('/.netlify/functions/send-mail', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
+  loader.classList.add("show");
+  messageBtn.disabled = true;
 
-        if (response.ok) {
-            alert("Email sent successfully");
-        } else {
-            alert("Failed to send email", "danger");
-        }
-    } catch (error) {
-        // console.error('Error: ', error);
-        alert("Failed to send email", "danger");
-    } finally {
-        loader.classList.remove('show');
-    }
-};
+  try {
+    const response = await fetch("/.netlify/functions/send-mail", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    console.log(response);
 
-function alert(message, type = "success") {
-    alertBox.textContent = message;
-    alertBox.className = `${type} alert show`;
+    if (!response.ok) throw new Error("Request failed");
 
-    setTimeout(() => {
-        alertBox.classList.remove('show');
-    }, 4000);
+    toast("Email sent successfully");
+    form.reset();
+    document
+      .querySelectorAll(".valid")
+      .forEach((el) => el.classList.remove("valid"));
+  } catch (err) {
+    console.error(err);
+    toast("Failed to send email", "danger");
+  } finally {
+    loader.classList.remove("show");
+    messageBtn.disabled = false;
+  }
+});
+
+/* ---------- Toast ---------- */
+function toast(message, type = "success") {
+  alertBox.textContent = message;
+  alertBox.className = `alert ${type} show`;
+
+  setTimeout(() => {
+    alertBox.classList.remove("show");
+  }, 4000);
 }
