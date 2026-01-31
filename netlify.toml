@@ -1,6 +1,9 @@
 [build]
-  functions = "backend/functions"
   command = "npm install --prefix backend"
+
+[functions]
+  directory = "backend/functions"
+  included_files = ["backend/functions/**/*.html"]
 
 [[redirects]]
   from = "/.netlify/functions/*"
