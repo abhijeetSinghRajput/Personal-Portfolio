@@ -81,7 +81,7 @@ export function HeroSection() {
       </div>
 
       <div className="flex-shrink-0 flex items-center justify-center">
-        <div className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden">
+        <div className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden shadow-xl border border-[#383838]">
           <Image
             src="/assets/avatar.webp"
             alt="Abhijeet Singh Rajput"
@@ -91,17 +91,6 @@ export function HeroSection() {
             priority
             fetchPriority="high"
             className="w-full h-full object-cover"
-          />
-          <Image
-            src="/assets/frame.png"
-            alt="Available for work status"
-            width={300}
-            height={300}
-            sizes="(max-width: 640px) 200px, (max-width: 768px) 250px, 300px"
-            priority
-            fetchPriority="high"
-            quality={85}
-            className="absolute inset-0 w-full h-full object-contain z-10 pointer-events-none"
           />
         </div>
       </div>
