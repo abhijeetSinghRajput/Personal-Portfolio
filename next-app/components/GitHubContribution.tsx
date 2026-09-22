@@ -10,9 +10,16 @@ const CELL_SIZE = 10;
 const CELL_GAP = 3;
 const STEP = CELL_SIZE + CELL_GAP;
 const MONTH_LABEL_HEIGHT = 20;
+const WEEKDAY_LABEL_WIDTH = 26;
 
 const COLORS = {
-  light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
+  light: [
+    "#ebedf0",
+    "hsl(150, 66%, 16%)",
+    "hsl(148, 100%, 21%)",
+    "hsl(133, 63%, 40%)",
+    "hsl(130, 64%, 53%)",
+  ],
   dark: [
     "#2d2d2f",
     "hsl(150, 66%, 16%)",
@@ -103,7 +110,7 @@ export default function GitHubContribution({
     const month = new Date(firstDay.date).getMonth();
     if (month !== lastMonth) {
       monthLabels.push({
-        x: wi * STEP,
+        x: WEEKDAY_LABEL_WIDTH + wi * STEP,
         label: new Date(firstDay.date).toLocaleString("default", {
           month: "short",
         }),
@@ -112,14 +119,15 @@ export default function GitHubContribution({
     }
   });
 
-  const svgWidth = Math.max(weeks.length * STEP, 53 * STEP);
+  const numWeeks = Math.max(weeks.length, 53);
+  const svgWidth = WEEKDAY_LABEL_WIDTH + numWeeks * STEP;
   const svgHeight = MONTH_LABEL_HEIGHT + 7 * STEP;
 
   return (
     <>
-      <div className="flex justify-between items-center gap-8 mb-2">
+      <div className="flex justify-between items-center gap-8 mb-3">
         <p className="text-[#a3a3a3] text-xs sm:text-sm">
-          <span className="font-semibold text-[#ffeea6]">
+          <span className="font-bold text-[#ffeea6]">
             {totalContributions.toLocaleString()}
           </span>{" "}
           contributions in the last year
@@ -160,8 +168,39 @@ export default function GitHubContribution({
         <svg
           width="100%"
           viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-          className={`block w-full h-auto${isLoading ? " animate-pulse" : ""}`}
+          className={`block w-full h-auto select-none${
+            isLoading ? " animate-pulse" : ""
+          }`}
         >
+          {/* Weekday labels */}
+          <text
+            x={0}
+            y={MONTH_LABEL_HEIGHT + 1 * STEP + 8}
+            fontSize={9}
+            fill="#9ba1a8"
+            fontFamily="sans-serif"
+          >
+            Mon
+          </text>
+          <text
+            x={0}
+            y={MONTH_LABEL_HEIGHT + 3 * STEP + 8}
+            fontSize={9}
+            fill="#9ba1a8"
+            fontFamily="sans-serif"
+          >
+            Wed
+          </text>
+          <text
+            x={0}
+            y={MONTH_LABEL_HEIGHT + 5 * STEP + 8}
+            fontSize={9}
+            fill="#9ba1a8"
+            fontFamily="sans-serif"
+          >
+            Fri
+          </text>
+
           {/* Month labels */}
           {monthLabels.map(({ x, label }, i) => (
             <text
@@ -169,8 +208,8 @@ export default function GitHubContribution({
               x={x}
               y={12}
               fontSize={10}
-              fill="#8b949e"
-              fontFamily="monospace"
+              fill="#9ba1a8"
+              fontFamily="sans-serif"
             >
               {label}
             </text>
@@ -179,7 +218,7 @@ export default function GitHubContribution({
           {/* Cells */}
           {weeks.map((week, wi) =>
             week.contributionDays.map((day, di) => {
-              const x = wi * STEP;
+              const x = WEEKDAY_LABEL_WIDTH + wi * STEP;
               const y = MONTH_LABEL_HEIGHT + di * STEP;
               return (
                 <rect
@@ -206,7 +245,7 @@ export default function GitHubContribution({
       </div>
 
       {/* Legend */}
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex justify-between items-center mt-3">
         <div>
           <div className="flex items-center gap-2">
             <GithubIcon className="size-4 text-[#fafafa]" />
@@ -215,7 +254,7 @@ export default function GitHubContribution({
                 href={`https://github.com/${gh_username}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-0.5 text-[#a3a3a3] hover:text-[#fafafa] text-xs transition-colors"
+                className="group inline-flex items-center gap-0.5 text-[#9ba1a8] hover:text-[#fafafa] text-xs transition-colors"
               >
                 {gh_username}
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 duration-200" />
@@ -224,15 +263,15 @@ export default function GitHubContribution({
           </div>
         </div>
         <div className="flex items-center gap-1">
-          <span className="text-[#a3a3a3] text-xs">Less</span>
+          <span className="text-[#9ba1a8] text-xs mr-1">Less</span>
           {colors.map((c, i) => (
             <div
               key={i}
-              className="rounded-[2px] size-2 sm:size-2.5"
+              className="rounded-[2px] size-2.5 sm:size-2.5"
               style={{ backgroundColor: c }}
             />
           ))}
-          <span className="text-[#a3a3a3] text-xs">More</span>
+          <span className="text-[#9ba1a8] text-xs ml-1">More</span>
         </div>
       </div>
     </>

@@ -90,7 +90,6 @@ export function HeroSection() {
             sizes="(max-width: 640px) 200px, (max-width: 768px) 250px, 300px"
             priority
             fetchPriority="high"
-            quality={85}
             className="w-full h-full object-cover"
           />
           <Image
