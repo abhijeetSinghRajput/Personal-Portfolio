@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://mrcodium.netlify.app/sitemap.xml
+

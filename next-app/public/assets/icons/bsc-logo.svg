@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="bsc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+    <linearGradient id="bsc-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="24" r="22" fill="url(#bsc-bg)" stroke="url(#bsc-gold)" stroke-width="2" />
+  <!-- School / Science Emblem -->
+  <!-- Atom orbit / Science crest -->
+  <ellipse cx="24" cy="20" rx="10" ry="4.5" fill="none" stroke="url(#bsc-gold)" stroke-width="1.5" transform="rotate(30 24 20)" />
+  <ellipse cx="24" cy="20" rx="10" ry="4.5" fill="none" stroke="url(#bsc-gold)" stroke-width="1.5" transform="rotate(-30 24 20)" />
+  <circle cx="24" cy="20" r="2.5" fill="url(#bsc-gold)" />
+  <!-- BSC Text -->
+  <text x="24" y="41" font-size="9" font-family="'Orbitron', sans-serif" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">BSC</text>
+</svg>
