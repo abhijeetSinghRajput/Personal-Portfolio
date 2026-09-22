@@ -129,10 +129,11 @@ export function AboutSection() {
             className="avatar w-[174px] h-[174px] overflow-hidden rounded-[18px] relative flex-shrink-0 pointer-events-none shadow-lg border border-[#383838]"
           >
             <Image
-              src="/assets/avatar.jpg"
+              src="/assets/avatar.webp"
               alt="Abhijeet Singh Rajput"
               width={174}
               height={174}
+              sizes="174px"
               className="w-full h-full object-cover"
               priority
             />

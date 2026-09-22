@@ -69,7 +69,7 @@ export const projectsData: Project[] = [
     subTitle: "2.1",
     description:
       "An enhanced C++ chess engine powered by bitboards, alpha-beta pruning, and custom heuristics — delivering competitive ELO-level performance.",
-    previewImage: "/assets/project-preview/doodle.webp",
+    previewImage: "/assets/project-preview/chess-preview.webp",
     technologies: [
       { name: "C++", icon: "/assets/icons/cpp.svg" },
     ],

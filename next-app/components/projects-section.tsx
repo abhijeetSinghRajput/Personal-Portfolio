@@ -51,10 +51,10 @@ export function ProjectsSection() {
                 <Image
                   src={project.previewImage}
                   alt={project.title}
-                  width={420}
-                  height={240}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 420px"
-                  quality={80}
+                  width={380}
+                  height={200}
+                  sizes="(max-width: 640px) 380px, (max-width: 1024px) 390px, 420px"
+                  quality={75}
                   className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
                   loading="lazy"
                 />
