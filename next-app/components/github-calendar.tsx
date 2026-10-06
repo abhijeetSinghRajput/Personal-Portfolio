@@ -3,12 +3,44 @@
 import { useEffect, useState } from "react";
 import GitHubContribution, { ContributionWeek } from "./GitHubContribution";
 
+const CACHE_KEY = "github_contributions_cache";
+const CACHE_DURATION_MS = 15 * 60 * 1000; // 15 minutes cache
+
 export function GithubCalendar() {
   const [totalContributions, setTotalContributions] = useState<number>(1343);
   const [weeks, setWeeks] = useState<ContributionWeek[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    let hasValidCache = false;
+
+    try {
+      const cached = localStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        const isFresh = Date.now() - parsed.timestamp < CACHE_DURATION_MS;
+
+        if (
+          parsed.weeks &&
+          Array.isArray(parsed.weeks) &&
+          parsed.weeks.length > 0
+        ) {
+          setWeeks(parsed.weeks);
+          if (typeof parsed.totalContributions === "number") {
+            setTotalContributions(parsed.totalContributions);
+          }
+          setIsLoading(false);
+          if (isFresh) {
+            hasValidCache = true;
+          }
+        }
+      }
+    } catch {
+      // Ignore localStorage read errors
+    }
+
+    if (hasValidCache) return;
+
     const fetchGithubData = async () => {
       try {
         const res = await fetch("/api/github-activity");
@@ -28,7 +60,21 @@ export function GithubCalendar() {
           fetchedWeeks.length > 0
         ) {
           setWeeks(fetchedWeeks);
-          if (typeof total === "number") setTotalContributions(total);
+          const totalVal = typeof total === "number" ? total : 1343;
+          if (typeof total === "number") setTotalContributions(totalVal);
+
+          try {
+            localStorage.setItem(
+              CACHE_KEY,
+              JSON.stringify({
+                timestamp: Date.now(),
+                weeks: fetchedWeeks,
+                totalContributions: totalVal,
+              })
+            );
+          } catch {
+            // Ignore localStorage write errors
+          }
         }
       } catch {
         // keep defaults

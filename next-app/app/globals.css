@@ -120,8 +120,8 @@ body {
 
 /* Hero CTA Button */
 .hero-cta {
-  color: #fafafa;
-  padding: 12px 22px;
+  color: #ffffff;
+  padding: 12px 20px;
   font-weight: 600;
   background: linear-gradient(135deg, hsl(30, 93%, 65%), hsl(16, 96%, 45%));
   border-radius: 16px;
@@ -130,42 +130,18 @@ body {
   overflow: hidden;
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    background 0.3s ease;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-.hero-cta::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  background: linear-gradient(
-      to bottom right,
-      hsla(240, 1%, 18%, 0.25) 0%,
-      hsla(240, 2%, 11%, 0) 100%
-    ),
-    hsl(240, 2%, 13%);
-  transition: 0.25s ease;
-  z-index: -1;
 }
 
 .hero-cta:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
   background: linear-gradient(135deg, hsl(30, 93%, 70%), hsl(16, 96%, 50%));
-}
-
-.hero-cta:hover::before {
-  background: linear-gradient(
-      135deg,
-      hsla(45, 100%, 71%, 0.25) 0%,
-      hsla(35, 100%, 68%, 0) 60%
-    ),
-    hsl(240, 2%, 13%);
 }
 
 /* Gold Gradient Button */

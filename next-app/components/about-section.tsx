@@ -42,7 +42,7 @@ export function AboutSection() {
         avatar.style.left = "auto";
         avatar.style.width = `${AVATAR_SIZE}px`;
         avatar.style.height = `${AVATAR_SIZE}px`;
-        avatar.style.borderRadius = "18px";
+        avatar.style.borderRadius = "50%";
         avatar.style.zIndex = "auto";
         avatar.style.pointerEvents = "none";
         slot.style.height = `${AVATAR_SIZE}px`;
@@ -78,15 +78,12 @@ export function AboutSection() {
       const left =
         fixedStartRect.left + (logoRect.left - fixedStartRect.left) * progress;
 
-      // Smoothly transition border radius from 18px (at 174px) to 50% circle
-      const radiusPercent = 10.34 + progress * (50 - 10.34);
-
       avatar.style.position = "fixed";
       avatar.style.width = `${size}px`;
       avatar.style.height = `${size}px`;
       avatar.style.top = `${top}px`;
       avatar.style.left = `${left}px`;
-      avatar.style.borderRadius = `${radiusPercent}%`;
+      avatar.style.borderRadius = "50%";
       avatar.style.zIndex = "1001";
       avatar.style.pointerEvents = "none";
 
@@ -126,7 +123,7 @@ export function AboutSection() {
         >
           <div
             ref={avatarRef}
-            className="avatar w-[174px] h-[174px] overflow-hidden rounded-[18px] relative flex-shrink-0 pointer-events-none shadow-lg border border-[#383838]"
+            className="avatar w-[174px] h-[174px] overflow-hidden rounded-full relative flex-shrink-0 pointer-events-none shadow-lg border border-[#383838]"
           >
             <Image
               src="/assets/avatar.webp"

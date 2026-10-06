@@ -14,14 +14,14 @@ const WEEKDAY_LABEL_WIDTH = 26;
 
 const COLORS = {
   light: [
-    "#ebedf0",
+    "#1e1e1f",
     "hsl(150, 66%, 16%)",
     "hsl(148, 100%, 21%)",
     "hsl(133, 63%, 40%)",
     "hsl(130, 64%, 53%)",
   ],
   dark: [
-    "#2d2d2f",
+    "#1e1e1f",
     "hsl(150, 66%, 16%)",
     "hsl(148, 100%, 21%)",
     "hsl(133, 63%, 40%)",

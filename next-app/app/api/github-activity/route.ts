@@ -1,8 +1,14 @@
 import { NextResponse } from "next/server";
 
+export const revalidate = 900; // 15 minutes cache
+
 export async function GET() {
   const token = process.env.GITHUB_TOKEN;
   const username = "abhijeetSinghRajput";
+
+  const headers = {
+    "Cache-Control": "public, s-maxage=900, stale-while-revalidate=450",
+  };
 
   if (token) {
     try {
@@ -30,11 +36,11 @@ export async function GET() {
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ query, variables: { username } }),
-        next: { revalidate: 3600 },
+        next: { revalidate: 900 },
       });
       const data = await response.json();
       if (data?.data?.user?.contributionsCollection?.contributionCalendar) {
-        return NextResponse.json(data);
+        return NextResponse.json(data, { headers });
       }
     } catch {
       // Fall through to public endpoint
@@ -45,7 +51,7 @@ export async function GET() {
   try {
     const res = await fetch(
       `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 900 } }
     );
     if (!res.ok) throw new Error("Public API returned error");
     const json = await res.json();
@@ -69,18 +75,21 @@ export async function GET() {
       weeks.push({ contributionDays: currentWeek });
     }
 
-    return NextResponse.json({
-      data: {
-        user: {
-          contributionsCollection: {
-            contributionCalendar: {
-              totalContributions: json.total?.lastYear || 1343,
-              weeks,
+    return NextResponse.json(
+      {
+        data: {
+          user: {
+            contributionsCollection: {
+              contributionCalendar: {
+                totalContributions: json.total?.lastYear || 1343,
+                weeks,
+              },
             },
           },
         },
       },
-    });
+      { headers }
+    );
   } catch (error) {
     return NextResponse.json(
       { error: "Failed to fetch GitHub activity", details: String(error) },
